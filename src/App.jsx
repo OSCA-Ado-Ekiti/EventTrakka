@@ -8,7 +8,7 @@ import Event from "./pages/Event";
 
 export default function App() {
   return (
-    <div>
+    <div className="font-pop">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

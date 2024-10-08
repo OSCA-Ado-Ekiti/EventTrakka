@@ -61,10 +61,10 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative text-left lg:pl-20 p-4 bg-gray-100">
+    <div className="relative text-left md:pl-20 p-4 bg-gray-100">
       <div className="mb-6 mt-16">
         <div className="flex gap-7">
-          <h1 className="lg:text-4xl text-xl font-bold text-green-800 mb-8">
+          <h1 className="font-bold text-3xl md:text-3xl lg:text-4xl text-hero-text mb-8">
             Gallery of Moments
           </h1>
           <img
@@ -73,12 +73,12 @@ const Carousel = () => {
             alt="Icon"
           />
         </div>
-        <div className="lg:flex justify-between ite ms-center">
-          <p className="text-gray-600 lg:text-lg lg:w-1/2 text-sm mb-4">
+        <div className="md:flex justify-between items-center">
+          <p className="text-gray-600 text-base lg:text-lg md:w-1/2 mb-4">
             Journey with Us Through Our Gallery: A Visual Odyssey of Captured
             Moments, Memories, and Creativity.
           </p>
-          <div className="flex gap-4 lg:mr-8 lg:ml-0 ml-24">
+          <div className="flex gap-4 md:mr-8 md:ml-0 ml-24">
             <div
               className="text-4xl text-gray-600 cursor-pointer items-center justify-center "
               onClick={prevSlide}
@@ -100,7 +100,10 @@ const Carousel = () => {
             {images
               .slice(currentSlide, currentSlide + slidesPerPage)
               .map((img, index) => (
-                <div key={index} className={`w-full sm:w-1/${slidesPerPage} p-1 relative`}>
+                <div
+                  key={index}
+                  className={`w-full sm:w-1/${slidesPerPage} p-1 relative`}
+                >
                   <div className="relative ">
                     <img
                       src={img.image}

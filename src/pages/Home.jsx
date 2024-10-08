@@ -20,21 +20,21 @@ const items = [
     title: "Event Management",
     description:
       "Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-    bgColor: "bg-blue-500",
+    bgColor: "bg-event-mgt",
     textColor: "text-blue-600",
   },
   {
     title: "Event Management",
     description:
       "Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-    bgColor: "bg-blue-500",
+    bgColor: "bg-event-mgt",
     textColor: "text-blue-600",
   },
   {
     title: "Event Management",
     description:
       "Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-    bgColor: "bg-blue-500",
+    bgColor: "bg-event-mgt",
     textColor: "text-blue-600",
   },
 ];
@@ -73,15 +73,15 @@ const Home = () => {
         }}
         className="bg-gray-100 py-6 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 mb-5"
       >
-        <div className="container mx-auto text-center">
-          <h4 className="text-2xl uppercase font-bold mb-6 text-left text-gray-500">
-            PARTNERS BY
+        <div className="container md:p-5 md:pt-10 mx-auto text-center">
+          <h4 className="text-2xl uppercase tracking-wider md:tracking-widest font-bold mb-6 text-left text-gray-500">
+            PARTNERED BY
           </h4>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={scrollControls}
             transition={{ duration: 0.8 }}
-            className="grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
           >
             {[LogoOne, LogoTwo, LogoThree, LogoFour, LogoFive, LogoSix].map(
               (logo, index) => (
@@ -96,7 +96,7 @@ const Home = () => {
                   <img
                     src={logo}
                     alt={`Partner ${index + 1}`}
-                    className="w-32 h-32 object-contain"
+                    className="w-32 h-32 object-contain grayscale"
                   />
                 </motion.div>
               )
@@ -107,39 +107,16 @@ const Home = () => {
 
       <AboutUs />
 
-      <section className=" flex flex-col md:flex-row justify-between items-center px-10 lg:px-20 mt-28 md:mt-32 gap-7 mb-5">
+      <section className=" flex flex-col md:flex-row justify-between items-center px-5 md:px-20 mt-28 md:mt-32 gap-7 mb-5">
         <div>
-          <h1
-            style={{
-              fontSize: "32px",
-              fontWeight: 700,
-              lineHeight: "48px",
-              letterSpacing: "0.01em",
-              textAlign: "left",
-            }}
-            className="text-green-800 mb-3"
-          >
+          <h1 className="mb-3 font-bold text-3xl lg:text-4xl text-hero-text">
             Your Ultimate Event Management Solution
           </h1>
-          <p
-            style={{
-              fontWeight: 400,
-              lineHeight: "32px",
-              textAlign: "left",
-            }}
-            className="text-gray-600  w-auto"
-          >
+          <p className="text-gray-600  w-auto text-base font-normal leading-9">
             Seamlessly manage, organize, and execute diverse events, from
             corporate
           </p>
-          <p
-            style={{
-              fontWeight: 400,
-              lineHeight: "32px",
-              textAlign: "left",
-            }}
-            className="text-gray-600 mb-14 w-auto"
-          >
+          <p className="text-gray-600 mb-14 w-auto text-base font-normal">
             conferences to community gatherings.
           </p>
 
@@ -150,7 +127,7 @@ const Home = () => {
                 className="w-full h-72 shadow-lg flex flex-col rounded-bl-2xl rounded-br-2xl justify-start items-start"
               >
                 <div
-                  className={`w-80 h-14 relative ${item.bgColor} rounded-tl-2xl rounded-tr-2xl`}
+                  className={`w-full h-14 relative ${item.bgColor} rounded-tl-2xl rounded-tr-2xl`}
                 />
                 <div className="p-2 bg-white rounded-lg flex space-x-2 absolute ml-8 mt-8">
                   <BiSolidCalendarStar

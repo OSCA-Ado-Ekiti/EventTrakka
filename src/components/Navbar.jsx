@@ -5,22 +5,17 @@ import { NavLink, Link } from "react-router-dom"; // Import Link from React Rout
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
   const [isCommunityDropdownOpen, setIsCommunityDropdownOpen] = useState(false);
-
-  const toggleEventDropdown = () => {
-    setIsEventDropdownOpen(!isEventDropdownOpen);
-    setIsCommunityDropdownOpen(false);
-  };
 
   const toggleCommunityDropdown = () => {
     setIsCommunityDropdownOpen(!isCommunityDropdownOpen);
-    setIsEventDropdownOpen(false);
   };
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+
+  const style = ({ isActive }) => (isActive ? "text-green-700" : "");
 
   useEffect(() => {
     const closeMenuOnBodyClick = (event) => {
@@ -48,11 +43,13 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed -top-0 left-0 right-0 z-50 w-full"
     >
-      <nav className="bg-white text-green-900 p-4 px-4 md:px-20 flex justify-between items-center shadow-lg">
+      <nav className=" bg-white text-green-900 p-4 px-4 md:px-20 flex justify-between items-center md:gap-5 lg:gap-0 shadow-lg">
         <div className="flex  items-center justify-between">
-          <span className="text-2xl font-bold text-green-900">EVENTTRAKKA</span>
+          <span className="text-2xl lg:text-3xl font-bold text-green-900">
+            EventTrakka
+          </span>
         </div>
         <button
           onClick={toggleMenu}
@@ -70,11 +67,11 @@ const Navbar = () => {
           id="menu"
           style={{ zIndex: 100 }}
         >
-          <ul className="flex flex-col px-4 text-2xl lg:text-lg border border-gray-100 rounded-lg bg-gray-50 md:space-x-8  md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className="flex flex-col items-center gap-3 py-4 md:py-0 md:gap-0 px-4 md:px-0 text-base md:text-md lg:text-lg border border-gray-100 rounded-lg bg-gray-50 md:space-x-8  md:flex-row md:mt-0 md:border-0 md:bg-white">
             <li>
               <NavLink
                 to="/"
-                className=" py-2  block px-1 text-black border-b-2 border-green-900 lg:border-none md:hover:text-green-700"
+                className={` py-2  block px-1 text-black md:hover:text-green-700 ${style}`}
                 aria-current="page"
               >
                 Home
@@ -82,59 +79,23 @@ const Navbar = () => {
             </li>
 
             <li>
-              <button
-                type="button"
-                onClick={toggleEventDropdown}
-                className="flex items-center lg:relative justify-between w-full py-2 px-1 group border-b-2 border-green-900 text-gray-900 rounded hover:bg-gray-100  md:border-0 md:hover:text-green-700"
+              <NavLink
+                to="/events"
+                className={` py-2  block px-1 text-black md:hover:text-green-700 ${style}`}
+                aria-current="page"
               >
-                Event <FaAngleDown className="inline-block group h-4 w-4" />
-              </button>
-              <div
-                className={`${
-                  isEventDropdownOpen ? "block" : "hidden"
-                } font-normal bg-white divide-y divide-gray-100 rounded-lg group-hover:block lg:absolute shadow w-44`}
-                style={{ zIndex: 100 }}
-              >
-                <ul
-                  className="py-2 text-sm lg:text-md w-auto text-gray-700"
-                  aria-labelledby="dropdownLargeButton"
-                >
-                  <li>
-                    <NavLink
-                      to="/EventOne"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Event 1
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/EventTwo"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Event 2
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/EventThree"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Event 3
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+                Events
+              </NavLink>
             </li>
             <li>
-              <button
+              <div
                 type="button"
                 onClick={toggleCommunityDropdown}
-                className="flex items-center lg:relative justify-between w-full py-2 px-1 border-b-2 border-green-900 lg:border-none text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:w-auto"
+                className="flex items-baseline lg:relative gap-1 justify-between w-full text-black py-2 px-1 rounded cursor-pointer md:hover:bg-transparent md:border-0 hover:text-green-700 md:w-auto"
               >
-                Community{" "}
+                <p>Community</p>
                 <FaAngleDown className="inline-block group h-4 w-4 " />
-              </button>
+              </div>
               <div
                 className={`${
                   isCommunityDropdownOpen ? "block" : "hidden"
@@ -175,22 +136,22 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/about"
-                className="block py-2 px-1 text-black border-b-2 border-green-900 md:hover:text-green-700 lg:border-none rounded "
+                className="block py-2 px-1 text-black md:hover:text-green-700 rounded "
                 aria-current="page"
               >
                 About
               </NavLink>
             </li>
-            <li>
+            <li className="self-center">
               <Link to="/login">
-                <button className="bg-white border border-green-900 w-full text-green-900 font-bold py-2 px-4 rounded-lg lg:ml-4 mt-4 hover:bg-green-700 hover:text-white lg:mt-0">
+                <button className="bg-white border border-green-900 w-full text-green-900 font-semibold lg:font-bold py-2 px-4 rounded-lg lg:ml-4 hover:bg-green-700 hover:text-white lg:mt-0">
                   Login
                 </button>
               </Link>
             </li>
             <li>
-              <Link to= {'/signup'} >
-                <button className="bg-green-900 hover:bg-green-700 w-full text-white font-light py-2 px-4 rounded-lg lg:ml-2 mt-4 lg:mt-0">
+              <Link to={"/signup"}>
+                <button className="bg-green-900 hover:bg-green-700 w-full text-white font-semibold lg:font-bold py-2 px-4 rounded-lg lg:ml-2 lg:mt-0">
                   Sign up
                 </button>
               </Link>
