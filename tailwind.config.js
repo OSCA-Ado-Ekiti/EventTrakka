@@ -8,16 +8,15 @@ module.exports = {
         "hero-text": "#3A3A3A",
         "event-mgt": "#00C7E5",
         "view-bk": "#EDFCF4",
+        'mountain-green': '##D3F8E1', //green for about hero page
       },
 
       spacing: {
         880: "80vh",
       },
-
-      lineHeight: {
-        70: "70px",
-      },
-
+			lineHeight: {
+				70: '70px',
+			},
       fontFamily: {
         pop: ["Poppins", "sans-serif"],
       },

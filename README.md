@@ -3,6 +3,7 @@ EventTrakka is a project created to help with event management and broadcasting 
 
 EVENTTRAKKA is a web platform that will help with accessing details about Tech events across all Tech communities in Ekiti. In it working context, you can check for upcoming, past and live events happening at OSCA ADO-EKITI, GDSC EKSU, GDSC FUOYE, GDSC BOUESTI, She Code Africa Ado-Ekiti, WTM Ado-Ekiti, MLSA EKSU, GDG Ado-Ekiti, DSN EKSU and other Tech Communities all at once on _EVENTTRAKKA_ 
 
+Figma Design Link: [Check here](https://www.figma.com/design/w1Hoj9ESFonR8tDl5WLedU/Event-Management?node-id=0-1&node-type=canvas&t=dPBPaxRKs5DWZBdc-0)
 
 ## How to start EventTrakka on your local machine for contribution
 NOTE: You should have forked the repo, cloned the repo to your local machine.
