@@ -6,6 +6,7 @@ import EventFour from "../assets/event-4.png";
 import EventFive from "../assets/event-5.png";
 import EventSix from "../assets/event-6.png";
 import { FaAngleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const eventData = [
   {
@@ -54,28 +55,36 @@ const eventData = [
   // Add more objects in the eventData array as needed
 ];
 const EventsAround = () => {
+  const navigate = useNavigate();
   return (
-    <section className="w-full h-auto lg:px-20 px-5 pt-12 pb-14 bg-white flex flex-col mt-28">
+    <section className="w-full h-auto md:px-20 px-5 pt-12 pb-14 bg-white flex flex-col mt-28">
       <div className="w-full  h-auto flex flex-col items-start gap-4">
         {/* First section */}
-        <div className="lg:flex w-full justify-between items-center">
-          <div className="text-gray-700 lg:text-4xl text-md font-bold flex lg:gap-7 gap-3">
+        <div className="md:flex w-full justify-between items-center">
+          <div className="font-bold text-3xl lg:text-4xl text-hero-text flex lg:gap-7 gap-3">
             <h1>Events around you</h1>
-            <img className="lg:w-12 lg:h-12 w-8 h-8" src={Location} alt="Icon" />
+            <img
+              className="lg:w-12 lg:h-12 w-8 h-8"
+              src={Location}
+              alt="Icon"
+            />
           </div>
           <div className="flex items-center gap-4 mt-3 ">
-            <a href="#" className="text-gray-700 justify-between flex lg:text-lg text-sm font-bold tracking-tight lg:gap-4 gap-1">
+            <a
+              href="#"
+              className="text-gray-700 justify-between flex lg:text-lg text-sm font-bold tracking-tight lg:gap-4 gap-1"
+            >
               <p>SEE MORE</p>
               <FaAngleRight className="ml-1 mt-1" />
             </a>
           </div>
         </div>
 
-        <p className="w-18 h-4 text-gray-500 text-base font-normal leading-loose mb-8 lg:mb-0">
+        <p className="w-18 h-4 text-gray-500 text-base font-normal leading-5 mb-2 lg:mb-0">
           Lorem ipsum dolor sit amet consectetur. Egestas sollicitudin iaculis
           nam
         </p>
-        <p className="w-18 h-4 text-gray-500 text-base font-normal leading-loose mb-16">
+        <p className="w-18 h-4 text-gray-500 text-base font-normal mb-16">
           fringilla vestibulum pulvinar mattis viverra. Sit nulla.
         </p>
       </div>
@@ -109,12 +118,12 @@ const EventsAround = () => {
                     <p className="w-full text-gray-500 text-base font-normal pr-10 mb-5 mt-5">
                       {event.description}
                     </p>
-                    <a
-                      href={event.link}
-                      className="text-green-800 flex text-base underline mb-5"
+                    <p
+                      onClick={() => navigate("/view")}
+                      className="text-green-800 flex text-base font-semibold underline mb-5 cursor-pointer"
                     >
                       View Details <FaAngleRight className="ml-1 mt-1" />
-                    </a>
+                    </p>
                   </div>
                 </div>
               </div>

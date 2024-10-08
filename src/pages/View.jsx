@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Navbar from "../components/Navbar";
 import HeroView from "../components/HeroView";
@@ -15,129 +15,138 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 const View = () => {
-    const scrollControls = useAnimation();
+  const scrollControls = useAnimation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const section = document.getElementById("partners-section");
-            const sectionTop = section.offsetTop - window.innerHeight;
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("partners-section");
+      const sectionTop = section.offsetTop - window.innerHeight;
 
-            if (window.scrollY >= sectionTop) {
-                scrollControls.start({ opacity: 1, y: 0 });
-            } else {
-                scrollControls.start({ opacity: 0, y: 30 });
-            }
-        };
+      if (window.scrollY >= sectionTop) {
+        scrollControls.start({ opacity: 1, y: 0 });
+      } else {
+        scrollControls.start({ opacity: 0, y: 30 });
+      }
+    };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [scrollControls]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollControls]);
 
-    return (
-        <div>
-            <Navbar />
-            <HeroView />
-            <motion.section
-                id="partners-section"
-                initial={{ opacity: 0, y: 50 }}
-                animate={scrollControls}
-                transition={{
-                    ease: "linear",
-                    duration: 0.5,
-                    x: { duration: 1 },
-                }}
-                className="bg-green-100 py-6 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 mb-5"
-            >
-                <div className="container mx-auto text-center">
-                    <h4 className="text-4xl uppercase font-bold mb-6 text-left text-green-600">
-                        Backend Developers Info Session
-                    </h4>
-                    <h4 className="text-2xl uppercase mb-6 text-left text-black-600">
-                        Exploring Crucial Aspect Of Backend Technology
-                    </h4>
-                    <div className="flex flex-row items-center text">
-                        <h4 className="text-1xl w-auto mr-4 text-left text-green-600">
-                            Date: Oct 12, 2023
-                        </h4>
-                        <button className="bg-green-900 hover:bg-green-700 text-white font-light py-2 px-4 rounded-lg mr-2">
-                            Virtual
-                        </button>
-                        <button className="bg-green-900 hover:bg-green-700 text-white font-light py-2 px-4 rounded-lg mr-2">
-                            Backend
-                        </button>
-                        <button className="bg-green-900 hover:bg-green-700 text-white font-light py-2 px-4 rounded-lg">
-                            GDSC Fuoye
-                        </button>
-                    </div>
-                    <h4 className="text-2xl mb-6 text-left text-black-600">
-                        Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.                    
-                    </h4>
-                    <h4 className="text-2xl mb-6 text-left text-black-600">
-                        Link to Register : https://bit.ly.334455
-                    </h4>
-                </div>
-            </motion.section>
+  return (
+    <div className="bg-gray-50">
+      <Navbar />
+      <HeroView />
+      <motion.section
+        id="partners-section"
+        initial={{ opacity: 0, y: 50 }}
+        animate={scrollControls}
+        transition={{
+          ease: "linear",
+          duration: 0.5,
+          x: { duration: 1 },
+        }}
+        style={{
+          background: "#EDFCF4",
+        }}
+        className="py-8 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 "
+      >
+        <div className="container mx-auto text-left">
+          <div className="mb-6">
+            <h4 className="text-3xl lg:text-4xl font-semibold leading-10 text-green-900">
+              Backend Developers Info Session
+            </h4>
+            <h4 className="text-xl lg:text-2xl text-hero-text">
+              Exploring Crucial Aspects Of Backend Technology
+            </h4>
+          </div>
 
-            {/* Speaker Section */}
-            <section className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
-                <div className="container mx-auto text-center">
-                    <h4 className="text-6xl uppercase  mb-6 text-black-600">Speakers</h4>
-                    <div className="flex w-full">
-                        {/* Speaker 1 */}
-                        <div className="flex md:w-1/2 flex-col items-center">
-                            <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
-                                <img src={Speaker01} alt="Speaker 1" className="w-full h-full object-cover" />
-                            </div>
-                            <h5 className="text-xl font-semibold">Goodness Sewo</h5>
-                            <p className="text-gray-600">GDSC Lead</p>
-                            <a href="/view/#" className="text-blue-500 hover:underline">View Profile</a>
-                        </div>
+          <div className="flex flex-col  gap-4 md:gap-0 md:flex-row justify-left items-center mb-6">
+            <h4 className="text-xl self-start md:self-center text-green-600 mr-4">
+              Date:{" "}
+              <span className="text-green-900 font-bold">Oct 12, 2023</span>
+            </h4>
+            <div className="flex self-start md:self-center gap-2 space-x-2">
+              <button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+                Virtual
+              </button>
+              <button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+                Backend
+              </button>
+              <button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+                GDSC Fuoye
+              </button>
+            </div>
+          </div>
 
-                        {/* Speaker 2 */}
-                        <div className="flex md:w-1/2 flex-col items-center">
-                            <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
-                                <img src={Speaker02} alt="Speaker 2" className="w-full h-full object-cover" />
-                            </div>
-                            <h5 className="text-xl font-semibold">Favour Adetayo</h5>
-                            <p className="text-gray-600">GDSC Co-Lead</p>
-                            <a href="/view/#" className="text-blue-500 hover:underline">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <div className="text-left mb-6">
+            <h4 className="text-xl lg:text-2xl text-black-600">
+              Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+              lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis
+              condimentum ac, vestibulum eu nisl.
+            </h4>
+          </div>
 
-            {/* Speaker Section */}
-            <section className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
-                <div className="container mx-auto text-center">
-                    <h4 className="text-6xl uppercase  mb-6 text-black-600">Organizers</h4>
-                    <div className="flex w-full">
-                        {/* Speaker 1 */}
-                        <div className="flex md:w-1/2 flex-col items-center">
-                            <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
-                                <img src={Organizer02} alt="Speaker 1" className="w-full h-full object-cover" />
-                            </div>
-                            <h5 className="text-xl font-semibold">Goodness Sewo</h5>
-                            <p className="text-gray-600">GDSC Lead</p>
-                            <a href="/view/#" className="text-blue-500 hover:underline">View Profile</a>
-                        </div>
-
-                        {/* Speaker 2 */}
-                        <div className="flex md:w-1/2 flex-col items-center">
-                            <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
-                                <img src={Organizer01} alt="Speaker 2" className="w-full h-full object-cover" />
-                            </div>
-                            <h5 className="text-xl font-semibold">Goodness Sewo</h5>
-                            <p className="text-gray-600">GDSC Lead</p>
-                            <a href="/view/#" className="text-blue-500 hover:underline">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <Newsletter />
-            <Footer />
+          <div className="text-left">
+            <h4 className="text-xl lg:text-2xl text-black-600">
+              <span className="font-bold">Link to Register: </span>
+              <a href="https://bit.ly.334455" className=" hover:text-green-700">
+                https://bit.ly.334455
+              </a>
+            </h4>
+          </div>
         </div>
-    );
+      </motion.section>
+
+      {/* Speaker Section */}
+      <section className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
+        <div className="container mx-auto text-center">
+          <h4 className="text-5xl lg:text-6xl lg:leading-70 font-normal text-hero-text  mb-6 text-black-600">
+            Organizers
+          </h4>
+          <div className="flex w-full">
+            {/* Speaker 1 */}
+            <div className="flex md:w-1/2 flex-col items-center">
+              <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
+                <img
+                  src={Organizer02}
+                  alt="Speaker 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h5 className="text-xl font-bold">Goodness Sewo</h5>
+              <p className="text-gray-600">GDSC Lead</p>
+              <a href="/view/#" className="text-blue-500 hover:underline">
+                View Profile
+              </a>
+            </div>
+
+            {/* Speaker 2 */}
+            <div className="flex md:w-1/2 flex-col items-center">
+              <div className="w-50 h-50 rounded-full overflow-hidden mb-4">
+                <img
+                  src={Organizer01}
+                  alt="Speaker 2"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h5 className="text-xl font-bold">Goodness Sewo</h5>
+              <p className="text-gray-600">GDSC Lead</p>
+              <a href="/view/#" className="text-blue-500 hover:underline">
+                View Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Newsletter />
+      <Footer />
+    </div>
+  );
 };
 
 export default View;

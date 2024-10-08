@@ -1,38 +1,31 @@
 import React from "react";
-import LoginImg from "../assets/login-image01.svg";
+import LoginImg from "../assets/logon.png";
 import { RiMailLine, RiLockPasswordLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="flex flex-col lg:flex-row overflow-hidden">
-      <div className="hidden m-3 rounded-lg bg-green-900 w-2/4 h-screen lg:flex lg:flex-col items-center justify-center">
-        <div>
+    <div className="flex md:flex-row h-screen p-5">
+      <div className="hidden md:flex flex-col rounded-lg gap-5 items-center justify-center h-full w-1/2 bg-green-900 flex-1">
+        <div className="p-4 h-full max-h-login-h max-w-login-w">
           <img
             src={LoginImg}
             alt="login-image"
-            className="bg-transparent"
-            width={400}
-            height={500}
+            className="bg-transparent w-full h-full"
           />
         </div>
-        <h1 className="text-white font-semibold text-2xl mt-12">
-          Create an event from your home
-        </h1>
-        <p className="text-white px-24 mt-2 text-justify">
-          Lorem ipsum dolor sit amet consectetur. Duis egestas sollicitudin
-          phasellus sed quis feugiat quis vitae ornare. Mauris diam in aliquam
-          enim ut facilisis. Elit elit.
-        </p>
       </div>
 
-      <div className="bg-white w-full lg:w-1/2">
-        <div className="lg:mx-32 mx-5">
-          <h1 className="text-gray-700 justify-center item-center text-3xl font-bold lg:mt-20 mt-8 mb-3">
-            Community Leads Login
-          </h1>
-          <h5>Welcome back! </h5>
-          <form className=" pt-6 pb-3 mb-2 mt-12 w-full">
+      <div className="bg-white w-full flex justify-center items-center md:w-1/2 flex-1">
+        <div className="flex flex-col gap-12">
+          <div>
+            <h1 className="text-gray-700 justify-center item-center text-3xl font-bold lg:mt-20 mt-8 mb-3">
+              Community Leads Login
+            </h1>
+            <h5>Welcome back! </h5>
+          </div>
+
+          <form className=" pt-6 pb-3 w-full">
             <div className="mb-10 relative">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <RiMailLine className="h-5 w-5  text-gray-500" />
@@ -57,7 +50,7 @@ const Login = () => {
               />
             </div>
             <div className="flex items-center justify-between mt-7">
-              <label className="block text-gray-700 font-bold">
+              <label className="text-gray-700 flex items-center font-bold">
                 <input className="mr-2 leading-tight" type="checkbox" />
                 <span className="text-sm  ">Remember Me</span>
               </label>
@@ -68,7 +61,10 @@ const Login = () => {
                 Forgot Password?
               </a>
             </div>
-            <div className="flex items-center justify-center mt-10">
+          </form>
+
+          <div className="flex flex-col gap-4 w-full">
+            <div className="flex items-center justify-center">
               <button
                 className="bg-green-500 hover:bg-green-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
@@ -76,13 +72,14 @@ const Login = () => {
                 Log In"
               </button>
             </div>
-          </form>
-          <p className="lg:text-md text-sm text-gray-600 flex items-center mx-auto lg:mx-12 justify-center">
-            Don’t have an account?
-            <Link to="/signup" className="text-green-800 font-bold">
-              Create an account
-            </Link>
-          </p>
+            <div className="lg:text-md text-sm gap-1 text-gray-600 flex items-center mx-auto lg:mx-12 justify-center">
+              <p>Don’t have an account? </p>
+
+              <Link to="/signup" className="text-green-800 font-bold">
+                Create an account
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
