@@ -13,7 +13,7 @@ const eventData = [
     image: EventOne,
     date: { month: "OCT", day: "20" },
     title: "Backend Developers info session",
-    description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
+    description: "Unlock the power behind the scenes! Join us for an exclusive session on mastering backend development. Learn the skills that drive robust applications and scalable systems.",
     link: "/view",
   },
   {
