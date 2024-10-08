@@ -24,10 +24,7 @@ const Footer = () => {
           <div className="p-6">
             <h1 className="text-3xl font-semibold mb-2">About us</h1>
             <p className="text-lg w-full text-justify">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+          
             </p>
             {/* Additional mobile content */}
             <div className="mt-8 mb-20">
@@ -89,10 +86,8 @@ const Footer = () => {
           >
             <h1 className="text-white text-3xl font-semibold mb-2">About us</h1>
             <p className="text-white text-lg w-1/2">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+            We provides a centralized way to access information about tech events across various tech communities in Ekiti, including upcoming, past, and live events. The platform aggregates
+             events from organizations such as GDSC EKSU, GDSC FUOYE, She Code Africa Ado-Ekiti, and many more.
             </p>
           </div>
           <div
