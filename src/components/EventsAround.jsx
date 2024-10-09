@@ -54,6 +54,7 @@ const eventData = [
 
   // Add more objects in the eventData array as needed
 ];
+
 const EventsAround = () => {
   const navigate = useNavigate();
   return (
@@ -96,7 +97,7 @@ const EventsAround = () => {
             className="flex flex-col justify-start items-start mt-12"
           >
             <div className="w-full lg:w-88 flex justify-between items-center">
-              <div className="rounded-lg shadow-xl flex flex-col justify-start items-start">
+              <div className="rounded-lg shadow-xl flex flex-col justify-start items-start transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
                 <img
                   className="w-full lg:w-88 h-13 rounded-tl-lg rounded-tr-lg"
                   src={event.image}
