@@ -22,7 +22,7 @@ const AboutHero = () => {
 			</div>
 
 			{/* About Section */}
-			<div className='w-full h-[551px] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 px-6 md:px-20 py-10'>
+			<div className='w-full h-[551px] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 px-6 md:px-20 py-10 md:mb-0 mb-48'>
 				<div className='relative'>
 					{/* Background Shape */}
 					<div className='bg-green-100 h-full w-full rounded-[60px] absolute -left-52 -z-10'></div>
