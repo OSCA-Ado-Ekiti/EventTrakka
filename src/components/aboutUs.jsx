@@ -60,11 +60,12 @@ const AboutUs = () => {
             </h1>
 
             <p className="text-md md:text-lg text-gray-600 mt-3 md:mt-4 text-justify">
-              Welcome to EventTrakka, your ultimate event management solution.
-              Streamline event organization and execution by getting proper
-              information using our powerful web app. Easily manage and track
-              every aspect of your events, from information to organizers. Say
-              goodbye to event management stress and hello to success.
+              {/* This should be changed to the history and journey of EventTrakka as this is already in the About Page */}
+            Welcome to EventTrakka, your ultimate event management solution.
+						Streamline event organization and execution by getting accurate
+						information using our powerful web app. Effortlessly manage and track
+						every aspect of your events, from information to organizers. Say
+						goodbye to the stress of event management and hello to success.
             </p>
           </div>
         </motion.div>

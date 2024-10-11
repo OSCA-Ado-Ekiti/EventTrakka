@@ -12,7 +12,7 @@ const AboutHero = () => {
 							Seamless Event Management Made Effortless – Welcome to EventTrakka
 						</h1>
 						<p className='text-gray-600 mt-4 text-lg md:text-2xl w-full md:w-[50%]'>
-							Getting Informations About Tech Event In Ekiti Just in One Place
+							Getting Information About Tech Events In Ekiti, All in One Place
 						</p>
 						<button className='mt-6 bg-green-800 text-white px-6 py-3 rounded-3xl hover:bg-green-700'>
 							See Upcoming events
@@ -37,10 +37,10 @@ const AboutHero = () => {
 					<h3 className='text-2xl font-semibold text-green-800 mb-4'>About</h3>
 					<p className='text-gray-700 text-lg leading-relaxed'>
 						Welcome to EventTrakka, your ultimate event management solution.
-						Streamline event organization and execution by getting proper
-						information using our powerful web app. Easily manage and track
+						Streamline event organization and execution by getting accurate
+						information using our powerful web app. Effortlessly manage and track
 						every aspect of your events, from information to organizers. Say
-						goodbye to event management stress and hello to success.
+						goodbye to the stress of event management and hello to success.
 					</p>
 				</div>
 			</div>
