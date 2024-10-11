@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import FooterImage from "../assets/footer.svg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,8 +44,11 @@ const Footer = () => {
                   <li className="text-white text-lg mb-1">
                     <a href="#">Communities</a>
                   </li>
-                  <li className="text-white text-lg mb-1">
-                    <a href="#">About Us</a>
+                  <li
+                    className="text-white text-lg mb-1"
+                    onClick={() => navigate("/")}
+                  >
+                    <p>EventTrakka</p>
                   </li>
                   <li className="text-white text-lg mb-1">
                     <a href="#">Our Blog</a>
@@ -108,8 +113,11 @@ const Footer = () => {
                 <li className="text-white text-lg mb-1">
                   <a href="#">Communities</a>
                 </li>
-                <li className="text-white text-lg mb-1">
-                  <a href="#">About Us</a>
+                <li
+                  className="text-white text-lg mb-1 cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  <p>EventTrakka</p>
                 </li>
                 <li className="text-white text-lg mb-1">
                   <a href="#">Our Blog</a>
