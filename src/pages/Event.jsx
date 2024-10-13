@@ -6,11 +6,13 @@ import Footer from "../components/Footer";
 
 const Event = () => {
   return (
-    <div className="font-pop h-screen">
-      <TrendingEvents />
-        <RegisterEvents/>
+    <div className="font-pop min-h-screen flex flex-col">
+      <main className="flex-grow">
+        <RegisterEvents />
+        <TrendingEvents />
         <NewsLetter />
-        <Footer />
+      </main>
+      <Footer />
     </div>
   );
 };
