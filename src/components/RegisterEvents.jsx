@@ -2,7 +2,7 @@ import React from 'react';
 
 const RegisterEvents = () => {
     return (
-        <div className="w-full flex flex-col items-center justify-center px-4 py-12 bg-[#f0faf5]">
+        <div className="w-full flex flex-col items-center justify-center px-4 pt-20 pb-12 bg-[#f0faf5]">
             <div className="max-w-4xl w-full flex flex-col items-start text-left mb-16">
                 <h1 className="text-5xl font-bold text-[#0F513D] leading-tight mb-4">
                     Seamless Event Management Made Effortless – Welcome to EventTrakka
