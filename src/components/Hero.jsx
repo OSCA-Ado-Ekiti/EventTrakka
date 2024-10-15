@@ -20,7 +20,7 @@ const Hero = () => {
         >
           <div className="">
             <p className="text-sm bg-green-200 text-green-800 rounded-2xl w-fit px-4 py-2 font-bold mb-4 md:mb-10 mt-4">
-              WELCOME TO EVENT TRACKER
+              WELCOME TO EVENTTRAKKA
             </p>
 
             <p className="text-5xl lg:text-6xl lg:leading-70 font-bold text-hero-text">

@@ -62,7 +62,7 @@ const EventList = () => {
 		'GDSC EKSU',
 		'MLSA EKSU',
 		'GDSC FUOYE',
-		'SCA ADO',
+		'OSCA ADO',
 		'WTM ADO',
 		'MLSA FUOYE',
 		'I4G FUOYE',
