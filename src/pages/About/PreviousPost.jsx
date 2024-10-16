@@ -1,171 +1,204 @@
-import React, { useState } from 'react';
-import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
-import PreviousImg from '../../assets/previousImg.png';
+import React, { useState, useEffect } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import GalleryOne from "../../assets/gallery-1.png";
+import GalleryTwo from "../../assets/gallery-2.png";
+import GalleryThree from "../../assets/gallery-3.png";
+import GalleryFour from "../../assets/gallery-4.png";
+import GalleryIcon from "../../assets/gallery-icon.png";
+import organizer1 from "../../assets/my-headshot.png";
+import organizer2 from "../../assets/img6063.png";
+import ContactUs from "./Contact"
 
-const Card = ({ image, title, subtitle, location }) => (
-	<div className='bg-white rounded-lg shadow-lg p-4'>
-		<img
-			src={image}
-			alt={title}
-			className='w-full h-48 object-cover rounded-t-lg'
-		/>
-		<h3 className='text-lg font-bold mt-4'>{title}</h3>
-		<p className='text-sm mt-2'>{subtitle}</p>
-		<p className='text-sm text-gray-500'>{location}</p>
-	</div>
-);
 
 const PreviousPost = () => {
-	const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [
+    { image: GalleryOne },
+    { image: GalleryTwo },
+    { image: GalleryThree },
+    { image: GalleryFour },
+    { image: GalleryTwo },
+    { image: GalleryThree },
+    { image: GalleryOne },
+    { image: GalleryFour },
+  ];
 
-	const cards = [
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'Info Session',
-			subtitle: 'GDSC Product Design info session',
-			location: 'Federal University, Oye-Ekiti',
-		},
-		{
-			image: PreviousImg,
-			title: 'React Workshop',
-			subtitle: 'Hands-on React and Vite integration',
-			location: 'Lagos Tech Hub',
-		},
-		{
-			image: PreviousImg,
-			title: 'AI Hackathon',
-			subtitle: '24-hour AI development challenge',
-			location: 'Tech Innovation Center, Abuja',
-		},
-		{
-			image: PreviousImg,
-			title: 'DevOps Masterclass',
-			subtitle: 'Intro to CI/CD and Kubernetes',
-			location: 'Code Academy, Port Harcourt',
-		},
-		{
-			image: PreviousImg,
-			title: 'Cloud Bootcamp',
-			subtitle: 'Mastering AWS cloud services',
-			location: 'Innovation Space, Enugu',
-		},
-		{
-			image: PreviousImg,
-			title: 'Frontend Conference',
-			subtitle: 'Exploring modern frontend frameworks',
-			location: 'Virtual Event',
-		},
-		{
-			image: PreviousImg,
-			title: 'Python Data Science',
-			subtitle: 'Data analysis with Python',
-			location: 'University of Ibadan',
-		},
-		{
-			image: PreviousImg,
-			title: 'Full-Stack Seminar',
-			subtitle: 'End-to-end web development techniques',
-			location: 'Tech Campus, Kano',
-		},
-		{
-			image: PreviousImg,
-			title: 'Blockchain Expo',
-			subtitle: 'The future of decentralized apps',
-			location: 'Tech Valley, Lagos',
-		},
-		{
-			image: PreviousImg,
-			title: 'JavaScript 101',
-			subtitle: 'Beginner to advanced JavaScript workshop',
-			location: 'Tech Zone, Akure',
-		},
-		{
-			image: PreviousImg,
-			title: 'Mobile Dev Summit',
-			subtitle: 'Building cross-platform mobile apps',
-			location: 'Innovation Center, Calabar',
-		},
-	];
+  const [slidesPerPage, setSlidesPerPage] = useState(1);
 
-	const visibleCards = cards.slice(currentIndex, currentIndex + 4);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setSlidesPerPage(4);
+      } else {
+        setSlidesPerPage(1);
+      }
+    };
 
-	const handleNext = () => {
-		if (currentIndex < cards.length - 4) {
-			setCurrentIndex(currentIndex + 1);
-		}
-	};
+    handleResize();
 
-	const handlePrev = () => {
-		if (currentIndex > 0) {
-			setCurrentIndex(currentIndex - 1);
-		}
-	};
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-	return (
-		<div className='p-8'>
-			<h2 className='text-2xl font-bold mb-6'>Previous Events</h2>
-			<div className='flex items-center'>
-				<button
-					onClick={handlePrev}
-					disabled={currentIndex === 0}
-					className={`text-2xl ${
-						currentIndex === 0
-							? 'text-gray-300 bg-gray-500 rounded-full'
-							: 'text-white bg-black rounded-full w-6 h-6'
-					}`}>
-					<BiChevronLeft />
-				</button>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-4'>
-					{visibleCards.map((card, index) => (
-						<Card
-							key={index}
-							{...card}
-						/>
-					))}
-				</div>
-				<button
-					onClick={handleNext}
-					disabled={currentIndex >= cards.length - 4}
-					className={`text-2xl ${
-						currentIndex >= cards.length - 4
-							? 'text-gray-500 bg-gray-400 rounded-full'
-							: 'text-white  bg-black rounded-full w-6 h-6'
-					}`}>
-					<BiChevronRight />
-				</button>
-			</div>
-		</div>
-	);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    const totalSlides = images.length;
+    setCurrentSlide((prev) =>
+      prev + slidesPerPage >= totalSlides ? 0 : prev + slidesPerPage
+    );
+  };
+
+  const prevSlide = () => {
+    const totalSlides = images.length;
+    setCurrentSlide((prev) =>
+      prev - slidesPerPage < 0
+        ? totalSlides - slidesPerPage
+        : prev - slidesPerPage
+    );
+  };
+
+  return (
+		<>
+      <div className="p-8 font-pop">
+        <div className="relative text-left">
+          <div className="mb-6 mt-16">
+            <div className="flex gap-7">
+              <h2 className="font-bold text-2xl md:text-2xl lg:text-3xl text-green-800 mb-8">
+                Past Events
+              </h2>
+            </div>
+            <div className="md:flex justify-between items-center">
+              <p className="text-gray-600 text-base lg:text-lg md:w-1/2 mb-4">
+                Explore past events held in our community.
+              </p>
+              <div className="flex gap-4 md:mr-8 md:ml-0 ml-24">
+                <div
+                  className="text-4xl text-gray-600 cursor-pointer items-center justify-center "
+                  onClick={prevSlide}
+                >
+                  <FaAngleLeft className="bg-gray-300 p-3 rounded-full" />
+                </div>
+                <div
+                  className="text-4xl text-gray-600 cursor-pointer rounded-full"
+                  onClick={nextSlide}
+                >
+                  <FaAngleRight className="bg-gray-300 p-3 rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between items-center mb-4 ">
+            <div className="w-full h-full overflow-hidden relative mb-16 ">
+              <div className="flex ">
+                {images
+                  .slice(currentSlide, currentSlide + slidesPerPage)
+                  .map((img, index) => (
+                    <div
+                      key={index}
+                      className={`w-full sm:w-1/${slidesPerPage} p-1 relative`}
+                    >
+                      <div className="relative ">
+                        <img
+                          src={img.image}
+                          alt={`Image ${index + currentSlide + 1}`}
+                          className="w-full h-96 object-cover rounded-md"
+                        />
+                        <div className=" absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4 rounded-md">
+                          <h4 className="text-white text-lg font-bold">
+                            Hacktober Fest
+                          </h4>
+                          <p className="text-gray-200">
+                            17th October 2023, Ado Ekiti
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="font-bold text-2xl md:text-2xl lg:text-3xl text-green-800 mb-8 ml-8">
+          Organizers
+        </h2>
+        <section className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+              {/* Organizer 1 */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mb-4">
+                  <img
+                    src={organizer1}
+                    alt="Goodness Sewo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h5 className="text-xl font-bold">Goodness Sewo</h5>
+                <p className="text-gray-600">GDSC Lead</p>
+                <a href="/view/#" className="text-green-600 hover:underline">
+                  View Profile
+                </a>
+              </div>
+
+              {/* Organizer 2 */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mb-4">
+                  <img
+                    src={organizer1}
+                    alt="Favour Adetayo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h5 className="text-xl font-bold">Favour Adetayo</h5>
+                <p className="text-gray-600">GDSC Co-Lead</p>
+                <a href="/view/#" className="text-green-600 hover:underline">
+                  View Profile
+                </a>
+              </div>
+
+              {/* Organizer 3 */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mb-4">
+                  <img
+                    src={organizer2}
+                    alt="Favour Adetayo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h5 className="text-xl font-bold">Favour Adetayo</h5>
+                <p className="text-gray-600">GDSC Co-Lead</p>
+                <a href="/view/#" className="text-green-600 hover:underline">
+                  View Profile
+                </a>
+              </div>
+
+              {/* Organizer 4 */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mb-4">
+                  <img
+                    src={organizer2}
+                    alt="Goodness Sewo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h5 className="text-xl font-bold">Goodness Sewo</h5>
+                <p className="text-gray-600">GDSC Lead</p>
+                <a href="/view/#" className="text-green-600 hover:underline">
+                  View Profile
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+			<ContactUs/>
+		</>
+  );
 };
 
 export default PreviousPost;
