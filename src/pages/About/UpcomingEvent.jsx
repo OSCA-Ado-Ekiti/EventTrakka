@@ -59,6 +59,7 @@ const EventList = () => {
 		},
 	];
 	const groups = [
+		'OSCA ADO',
 		'GDSC EKSU',
 		'MLSA EKSU',
 		'GDSC FUOYE',

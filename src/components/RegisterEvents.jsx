@@ -8,7 +8,7 @@ const RegisterEvents = () => {
                     Seamless Event Management Made Effortless – Welcome to EventTrakka
                 </h1>
                 <p className="text-lg text-gray-600 mb-8">
-                    Getting Information About Tech Event In Ekiti Just in One Place
+                    Getting Information About Tech Events in Ekiti, All in One Place
                 </p>
                 <button className="bg-[#0F513D] text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-[#0D4535] transition duration-300">
                     See Upcoming events
