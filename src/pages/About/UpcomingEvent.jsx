@@ -1,7 +1,7 @@
 import React from 'react';
 import UpcomingEvent from '../../assets/upcomingEvent.png';
 
-const EventCard = ({ image, title, description, date, sessionType, group }) => (
+const EventCard = ({ image, title, description, date, sessionType, group, details }) => (
 	<div className='flex flex-col md:flex-row rounded-lg p-4 mb-6 font-pop'>
 		<img
 			src={image}
@@ -24,9 +24,9 @@ const EventCard = ({ image, title, description, date, sessionType, group }) => (
 					{group}
 				</span>
 			</div>
-			<button className='mt-4 bg-[#0B5A3C] text-white px-4 py-2 rounded-[22px] w-full md:w-auto'>
+			<a href={details} className='block md:inline-block text-center mt-4 bg-[#0B5A3C] text-white px-4 py-2 rounded-[22px] w-full md:w-auto'>
 				View Details
-			</button>
+			</a>
 		</div>
 	</div>
 );
@@ -40,6 +40,7 @@ const EventList = () => {
 			date: 'Oct 12, 2023',
 			sessionType: 'Info Session',
 			group: 'GDSC Fuoye',
+			details: '#'
 		},
 		{
 			image: UpcomingEvent,
@@ -48,6 +49,7 @@ const EventList = () => {
 			date: 'Oct 12, 2023',
 			sessionType: 'Info Session',
 			group: 'GDSC Fuoye',
+			details: '#'
 		},
 		{
 			image: UpcomingEvent,
@@ -56,6 +58,7 @@ const EventList = () => {
 			date: 'Oct 12, 2023',
 			sessionType: 'Info Session',
 			group: 'GDSC Fuoye',
+			details: '#'
 		},
 	];
 	const groups = [
