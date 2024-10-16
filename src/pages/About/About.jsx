@@ -7,8 +7,8 @@ import AboutHero from '../../components/AboutHero';
 const About = () => {
 	return (
 		<div>
-			<AboutHero />
 			<Header />
+			<AboutHero />
 			<EventList />
 			<PreviousPost />
 			<Footer />

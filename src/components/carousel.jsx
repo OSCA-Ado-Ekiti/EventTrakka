@@ -14,8 +14,8 @@ const Carousel = () => {
     { image: GalleryFour },
     { image: GalleryTwo },
     { image: GalleryThree },
-    { image: GalleryOne },
     { image: GalleryFour },
+    { image: GalleryOne },
   ];
 
   const [slidesPerPage, setSlidesPerPage] = useState(1);
