@@ -8,7 +8,7 @@ const Hero = () => {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="w-full flex md:h-screen items-center justify-center p-5 pt-20 md:p-20"
+      className="w-full flex lg:h-screen items-center justify-center p-5 pt-20 md:p-20"
     >
       <div className="flex flex-col md:flex-row justify-between items-center gap-7">
         {/* Left Div */}
