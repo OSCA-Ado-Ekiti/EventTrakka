@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const SignUpPage = () => {
   return (
     <>
+      <Navbar />
       <div className="mt-28">
         <div className="flex lg:mx-10">
           <div className="lg:flex hidden relative justify-center items-center bg-green-900 text-white p-10 rounded-[69px] w-5/12">

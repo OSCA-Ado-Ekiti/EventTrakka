@@ -24,7 +24,12 @@ const Footer = () => {
       {isMobile ? (
         <div className="w-full h-full bg-custom-green text-white">
           <div className="p-6">
-            <h1 className="text-3xl font-semibold mb-2" onClick={() => navigate('/')}>EventTrakka</h1>
+            <h1
+              className="text-3xl font-semibold mb-2"
+              onClick={() => navigate("/")}
+            >
+              EventTrakka
+            </h1>
             <p className="text-lg w-full text-justify">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -44,8 +49,8 @@ const Footer = () => {
                   <li className="text-white text-lg mb-1">
                     <a href="#">Communities</a>
                   </li>
-                  <lin className="text-white text-lg mb-1">
-                    <a href='#'>About us</a>
+                  <li className="text-white text-lg mb-1">
+                    <a href="#">About us</a>
                   </li>
                   <li className="text-white text-lg mb-1">
                     <a href="#">Our Blog</a>
@@ -89,7 +94,12 @@ const Footer = () => {
             className="absolute top-0 left-0 p-6"
             style={{ top: "250px", left: "100px" }}
           >
-            <h1 className="text-white text-3xl font-semibold mb-2" onClick={() => navigate('/')}>EventTrakka</h1>
+            <h1
+              className="text-white text-3xl font-semibold mb-2"
+              onClick={() => navigate("/")}
+            >
+              EventTrakka
+            </h1>
             <p className="text-white text-lg w-1/2">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
