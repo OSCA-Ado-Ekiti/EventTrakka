@@ -1,11 +1,8 @@
-import React from "react";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   return (
     <>
-      <Navbar />
       <div className="mt-28">
         <div className="flex lg:mx-10">
           <div className="lg:flex hidden relative justify-center items-center bg-green-900 text-white p-10 rounded-[69px] w-5/12">
@@ -56,28 +53,25 @@ const SignUpPage = () => {
                 placeholder="Community"
                 className="w-full p-3 border rounded"
               />
-              
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="w-full p-3 border rounded"
-                />
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  className="w-full p-3 border rounded"
-                />
-              
+
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full p-3 border rounded"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="w-full p-3 border rounded"
+              />
+
               <p className="text-sm text-gray-600">
                 By proceeding, I agree to EventTrakka's
                 <span className="text-green-800">Terms of Use</span> and
                 acknowledge that I have read the{" "}
                 <span className="text-green-800">Privacy Policy</span>.
               </p>
-              <div>
-
-                
-              </div>
+              <div></div>
               <button className="w-full bg-green-700 text-white py-3 rounded">
                 Sign up
               </button>
@@ -85,7 +79,10 @@ const SignUpPage = () => {
             <p className="mt-4 text-center text-sm">
               Already have an account?
               {""}
-              <Link to="/login" className="text-green-800"> Sign in</Link>
+              <Link to="/login" className="text-green-800">
+                {" "}
+                Sign in
+              </Link>
             </p>
           </div>
         </div>
