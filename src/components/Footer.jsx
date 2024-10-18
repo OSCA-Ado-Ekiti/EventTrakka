@@ -24,7 +24,7 @@ const Footer = () => {
       {isMobile ? (
         <div className="w-full h-full bg-custom-green text-white">
           <div className="p-6">
-            <h1 className="text-3xl font-semibold mb-2"onClick={() => navigate('/')}>EventTrakka</h1>
+            <h1 className="text-3xl font-semibold mb-2" onClick={() => navigate('/')}>EventTrakka</h1>
             <p className="text-lg w-full text-justify">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
