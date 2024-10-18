@@ -37,13 +37,13 @@ const Footer = () => {
                 </h1>
                 <ul>
                   <li className="text-white text-lg mb-1">
-                    <a href="#">Events</a>
+                    <a href="/events">Events</a>
                   </li>
                   <li className="text-white text-lg mb-1">
                     <a href="#">Communities</a>
                   </li>
                   <li className="text-white text-lg mb-1">
-                    <a href="#">About Us</a>
+                    <a href="/about">About Us</a>
                   </li>
                   <li className="text-white text-lg mb-1">
                     <a href="#">Our Blog</a>
@@ -103,16 +103,16 @@ const Footer = () => {
               <h1 className="text-white text-xl font-semibold mb-2">Company</h1>
               <ul>
                 <li className="text-white text-lg mb-1">
-                  <a href="#">Events</a>
+                  <a href="/events">Events</a>
                 </li>
                 <li className="text-white text-lg mb-1">
                   <a href="#">Communities</a>
                 </li>
                 <li className="text-white text-lg mb-1">
-                  <a href="#">About Us</a>
+                  <a href="/about">About Us</a>
                 </li>
                 <li className="text-white text-lg mb-1">
-                  <a href="#">Our Blog</a>
+                  <a href="#blog">Our Blog</a>
                 </li>
               </ul>
             </div>

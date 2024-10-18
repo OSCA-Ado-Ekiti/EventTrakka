@@ -72,7 +72,7 @@ const EventsAround = () => {
           </div>
           <div className="flex items-center gap-4 mt-3 ">
             <a
-              href="#"
+              href="/events"
               className="text-gray-700 justify-between flex lg:text-lg text-sm font-bold tracking-tight lg:gap-4 gap-1"
             >
               <p>SEE MORE</p>
