@@ -46,21 +46,17 @@ const Footer = () => {
                   <li className="text-white text-lg mb-1">
                     <a href="/events">Events</a>
                   </li>
-                  <li className="text-white text-lg mb-1">
+                  <li className="text-white text-lg mb-1"> 
                     <a href="#">Communities</a>
                   </li>
                   <li className="text-white text-lg mb-1">
-<<<<<<< HEAD
-                    <a href="#">About us</a>
-=======
                     <a href="/about">About Us</a>
->>>>>>> d82f18e8f31efcf04d888a9ca7a6569eabb1a9f8
                   </li>
                   <li className="text-white text-lg mb-1">
                     <a href="#">Our Blog</a>
                   </li>
                 </ul>
-              </div>
+              </div> 
               <div className=" mt-8">
                 <h1 className="text-white text-xl font-semibold mb-2">
                   Support
@@ -124,13 +120,8 @@ const Footer = () => {
                 <li className="text-white text-lg mb-1">
                   <a href="#">Communities</a>
                 </li>
-<<<<<<< HEAD
-                <li className="text-white text-lg mb-1 cursor-pointer">
-                  <a href="#">About us</a>
-=======
                 <li className="text-white text-lg mb-1">
                   <a href="/about">About Us</a>
->>>>>>> d82f18e8f31efcf04d888a9ca7a6569eabb1a9f8
                 </li>
                 <li className="text-white text-lg mb-1">
                   <a href="#blog">Our Blog</a>
