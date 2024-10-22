@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import About from "./pages/About/About";
 import View from "./pages/View";
 import Event from "./pages/Event";
+import AboutEvent from "./pages/infosession/AboutEvent";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/view" element={<View />} />
         <Route path="/events" element={<Event />} />
+        <Route path="/AboutEvent" element={<AboutEvent />} />
       </Routes>
     </div>
   );
