@@ -23,7 +23,7 @@ const AboutUs = () => {
       ref={ref}
       initial={{ opacity: 0, x: -50 }}
       animate={controls}
-      className="w-full flex md:h-880 items-center justify-center p-5 pt-20 md:p-20"
+      className="w-full flex lg:h-880 items-center justify-center p-5 pt-20 md:p-20"
     >
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10 lg:gap-20">
         {/* Left Div */}
@@ -53,7 +53,7 @@ const AboutUs = () => {
                 style={{
                   fontFamily: "Playfair Display, serif",
                 }}
-                className="text-green-900"
+                className="text-green-900 italic"
               >
                 Event Trakka
               </span>

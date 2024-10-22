@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaAngleDown, FaBars } from "react-icons/fa";
-import { NavLink, Link } from "react-router-dom"; // Import Link from React Router
+import { NavLink, Link, useNavigate } from "react-router-dom"; // Import Link from React Router
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isCommunityDropdownOpen, setIsCommunityDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleCommunityDropdown = () => {
     setIsCommunityDropdownOpen(!isCommunityDropdownOpen);
@@ -47,7 +48,10 @@ const Navbar = () => {
     >
       <nav className=" bg-white text-green-900 p-4 px-4 flex justify-between items-center md:gap-5 lg:gap-0 shadow-lg">
         <div className="flex  items-center justify-between">
-          <span className="text-2xl lg:text-3xl font-bold text-green-900">
+          <span
+            className="text-2xl cursor-pointer lg:text-3xl font-bold text-green-900"
+            onClick={() => navigate("/")}
+          >
             EventTrakka
           </span>
         </div>
@@ -87,19 +91,19 @@ const Navbar = () => {
                 Events
               </NavLink>
             </li>
-            <li>
+            <li className="md:relative">
               <div
                 type="button"
                 onClick={toggleCommunityDropdown}
-                className="flex items-baseline lg:relative gap-1 justify-between w-full text-black py-2 px-1 rounded cursor-pointer md:hover:bg-transparent md:border-0 hover:text-green-700 md:w-auto"
+                className="flex items-center  gap-1 justify-between w-full text-black py-2 px-1 rounded cursor-pointer md:hover:bg-transparent md:border-0 hover:text-green-700 md:w-auto"
               >
                 <p>Community</p>
-                <FaAngleDown className="inline-block group h-4 w-4 " />
+                <FaAngleDown className="inline-block group" />
               </div>
               <div
                 className={`${
                   isCommunityDropdownOpen ? "block" : "hidden"
-                } z-100  font-normal bg-white divide-y group-hover:block divide-gray-100 lg:absolute rounded-lg shadow w-44`}
+                } w-full z-100  font-normal bg-white divide-y group-hover:block divide-gray-100 md:absolute rounded-lg shadow`}
                 style={{ zIndex: 100 }}
               >
                 <ul
