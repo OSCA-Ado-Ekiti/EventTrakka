@@ -6,6 +6,8 @@ import About from "./pages/About/About";
 import View from "./pages/View";
 import Event from "./pages/Event";
 import SignUpPage from "./pages/Register";
+import Communities from "./pages/Communities";
+import Gdsceksu from "./pages/Communities/Gdsceksu";
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
         <Route path="/view" element={<View />} />
         <Route path="/events" element={<Event />} />
         <Route path="/signup" element={<SignUpPage/>} />
+        <Route path="/communities" element={<Communities />} />
+        <Route path="/communities/gdsceksu" element={<Gdsceksu />} />
       </Routes>
     </div>
   );
