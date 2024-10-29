@@ -112,10 +112,10 @@ const Navbar = () => {
                 >
                   <li>
                     <NavLink
-                      to="/CommunityOne"
+                      to="/communities/gdsceksu"
                       className="block px-4 py-2 hover:bg-gray-100 "
                     >
-                      Community 1
+                      GDSC EKSU
                     </NavLink>
                   </li>
                   <li>
