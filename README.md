@@ -17,3 +17,7 @@ EventTrakka is up 🎉🎉🎉 your terminal should look like this.
 
 
 You can now access EventTrakka locally on ``` http://localhost:5173/```
+
+## API Documentation
+API DOCS URL: https://cold-pinniped-coyote-solutions-5af7408f.koyeb.app/docs
+[Check here](https://cold-pinniped-coyote-solutions-5af7408f.koyeb.app/docs)
