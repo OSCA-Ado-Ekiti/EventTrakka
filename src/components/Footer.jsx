@@ -46,7 +46,7 @@ const Footer = () => {
                   <li className="text-white text-lg mb-1">
                     <a href="/events">Events</a>
                   </li>
-                  <li className="text-white text-lg mb-1">
+                  <li className="text-white text-lg mb-1"> 
                     <a href="#">Communities</a>
                   </li>
                   <li className="text-white text-lg mb-1">
@@ -56,7 +56,7 @@ const Footer = () => {
                     <a href="#">Our Blog</a>
                   </li>
                 </ul>
-              </div>
+              </div> 
               <div className=" mt-8">
                 <h1 className="text-white text-xl font-semibold mb-2">
                   Support
