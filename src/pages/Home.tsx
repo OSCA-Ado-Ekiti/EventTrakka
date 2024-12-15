@@ -1,9 +1,9 @@
-import LogoSix from "@assets/14g-oye.png";
-import LogoFour from "@assets/She-code-africa.png";
-import LogoThree from "@assets/WIT.png";
-import LogoTwo from "@assets/google-ado.png";
-import LogoOne from "@assets/google-oye.png";
-import LogoFive from "@assets/microsoft-learn.png";
+import i4gLogoUrl from "@assets/14g-oye.png";
+import sheCodeAfricaLogoUrl from "@assets/She-code-africa.png";
+import witLogoUrl from "@assets/WIT.png";
+import googleAdoUrl from "@assets/google-ado.png";
+import googleOyeUrl from "@assets/google-oye.png";
+import microsoftLearnUrl from "@assets/microsoft-learn.png";
 import EventsAround from "@components/EventsAround.tsx";
 import Footer from "@components/Footer.tsx";
 import Hero from "@components/Hero.tsx";
@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { BiSolidCalendarStar } from "react-icons/bi";
 import { FaArrowUp } from "react-icons/fa";
 
-const items = [
+const events = [
 	{
 		title: "Event Management",
 		description:
@@ -95,24 +95,30 @@ const Home = () => {
 						transition={{ duration: 0.8 }}
 						className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
 					>
-						{[LogoOne, LogoTwo, LogoThree, LogoFour, LogoFive, LogoSix].map(
-							(logo, index) => (
-								<motion.div
-									key={index}
-									initial={{ opacity: 0, y: 50 }}
-									animate={scrollControls}
-									transition={{ duration: 0.8, delay: index * 0.1 }}
-									className="partner-logo"
-									whileHover={{ scale: 1.1 }}
-								>
-									<img
-										src={logo}
-										alt={`Partner ${index + 1}`}
-										className="w-32 h-32 object-contain grayscale"
-									/>
-								</motion.div>
-							),
-						)}
+						{[
+							googleOyeUrl,
+							googleAdoUrl,
+							witLogoUrl,
+							sheCodeAfricaLogoUrl,
+							microsoftLearnUrl,
+							i4gLogoUrl,
+						].map((logo, index) => (
+							<motion.div
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								key={index}
+								initial={{ opacity: 0, y: 50 }}
+								animate={scrollControls}
+								transition={{ duration: 0.8, delay: index * 0.1 }}
+								className="partner-logo"
+								whileHover={{ scale: 1.1 }}
+							>
+								<img
+									src={logo}
+									alt={`Partner ${index + 1}`}
+									className="w-32 h-32 object-contain grayscale"
+								/>
+							</motion.div>
+						))}
 					</motion.div>
 				</div>
 			</motion.section>
@@ -133,26 +139,27 @@ const Home = () => {
 					</p>
 
 					<div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-20 ">
-						{items.map((item, index) => (
+						{events.map((event, index) => (
 							<div
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
 								className="w-full h-72 shadow-lg flex flex-col rounded-bl-2xl rounded-br-2xl justify-start items-start"
 							>
 								<div
-									className={`w-full h-14 relative ${item.bgColor} rounded-tl-2xl rounded-tr-2xl`}
+									className={`w-full h-14 relative ${event.bgColor} rounded-tl-2xl rounded-tr-2xl`}
 								/>
 								<div className="p-2 bg-white rounded-lg flex space-x-2 absolute ml-8 mt-8">
 									<BiSolidCalendarStar
-										className={`text-5xl ${item.textColor}`}
+										className={`text-5xl ${event.textColor}`}
 									/>
 								</div>
 								<div className="h-66 px-8 pt-10 pb-2 bg-white flex flex-col justify-start items-start ">
 									<div className="flex flex-col justify-start items-start space-y-4">
 										<h1 className="text-neutral-600 text-2xl font-bold  mt-8">
-											{item.title}
+											{event.title}
 										</h1>
 										<p className="w-62 text-stone-500 text-base font-normal ">
-											{item.description}
+											{event.description}
 										</p>
 									</div>
 								</div>
@@ -169,6 +176,7 @@ const Home = () => {
 
 			{showButton && (
 				<button
+					type="button"
 					onClick={scrollToTop}
 					className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
 				>

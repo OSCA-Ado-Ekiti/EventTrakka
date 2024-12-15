@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import "@/index.css";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root") as HTMLDivElement).render(
 	<StrictMode>
 		<Router>
 			<App />

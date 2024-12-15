@@ -1,4 +1,4 @@
-import LoginImg from "@assets/logon.png";
+import loginIllustrationUrl from "@assets/logon.png";
 import Navbar from "@components/Navbar.tsx";
 import { RiLockPasswordLine, RiMailLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ const Login = () => {
 				<div className="hidden md:flex flex-col rounded-lg gap-5 items-center justify-center h-full w-1/2 bg-green-900 flex-1">
 					<div className="p-4 h-full max-h-login-h max-w-login-w">
 						<img
-							src={LoginImg}
+							src={loginIllustrationUrl}
 							alt="login-image"
 							className="bg-transparent w-full h-full"
 						/>
