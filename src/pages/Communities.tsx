@@ -1,5 +1,3 @@
-const Communities = () => {
+export default function Communities() {
 	return <div>Communities</div>;
-};
-
-export default Communities;
+}

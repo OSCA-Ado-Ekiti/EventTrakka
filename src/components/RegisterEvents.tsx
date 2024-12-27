@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
-const RegisterEvents = () => {
+export default function RegisterEvents() {
 	return (
 		<div className="w-full flex flex-col items-center justify-center px-4 pt-20 pb-12 bg-[#f0faf5]">
 			<div className="max-w-4xl w-full flex flex-col items-start text-left mb-16">
@@ -37,6 +37,4 @@ const RegisterEvents = () => {
 			</div>
 		</div>
 	);
-};
-
-export default RegisterEvents;
+}

@@ -5,7 +5,7 @@ import {
 	FaTwitter,
 } from "react-icons/fa";
 
-const ContactUs = () => {
+export default function Contact() {
 	return (
 		<section className="py-10">
 			<div className="container mx-auto text-center">
@@ -30,6 +30,4 @@ const ContactUs = () => {
 			</div>
 		</section>
 	);
-};
-
-export default ContactUs;
+}

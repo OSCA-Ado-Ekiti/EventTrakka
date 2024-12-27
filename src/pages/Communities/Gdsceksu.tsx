@@ -3,7 +3,7 @@ import Footer from "@components/Footer.tsx";
 import Navbar from "@components/Navbar.tsx";
 import Organizers from "@components/Organizers.tsx";
 
-const Gdsceksu = () => {
+export default function Gdsceksu() {
 	return (
 		<div>
 			<Navbar />
@@ -12,6 +12,4 @@ const Gdsceksu = () => {
 			<Footer />
 		</div>
 	);
-};
-
-export default Gdsceksu;
+}

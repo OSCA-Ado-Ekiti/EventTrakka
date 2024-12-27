@@ -1,58 +1,36 @@
+import { eventsData1 } from "@/dummyData.ts";
 import i4gLogoUrl from "@assets/14g-oye.png";
 import sheCodeAfricaLogoUrl from "@assets/She-code-africa.png";
 import witLogoUrl from "@assets/WIT.png";
 import googleAdoUrl from "@assets/google-ado.png";
 import googleOyeUrl from "@assets/google-oye.png";
 import microsoftLearnUrl from "@assets/microsoft-learn.png";
+import AboutUs from "@components/AboutUs.tsx";
+import Carousel from "@components/Carousel.tsx";
 import EventsAround from "@components/EventsAround.tsx";
 import Footer from "@components/Footer.tsx";
 import Hero from "@components/Hero.tsx";
 import Navbar from "@components/Navbar.tsx";
 import NewsLetter from "@components/Newsletter.tsx";
-import AboutUs from "@components/aboutUs.tsx";
-import Carousel from "@components/carousel.tsx";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiSolidCalendarStar } from "react-icons/bi";
 import { FaArrowUp } from "react-icons/fa";
 
-const events = [
-	{
-		title: "Event Management",
-		description:
-			"Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-		bgColor: "bg-event-mgt",
-		textColor: "text-blue-600",
-	},
-	{
-		title: "Event Management",
-		description:
-			"Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-		bgColor: "bg-event-mgt",
-		textColor: "text-blue-600",
-	},
-	{
-		title: "Event Management",
-		description:
-			"Lorem ipsum dolor sit amet cotetur. Non sed quisque mattis tellus quisque. Dictumst orci id purus",
-		bgColor: "bg-event-mgt",
-		textColor: "text-blue-600",
-	},
-];
-
-const Home = () => {
+export default function Home() {
 	const scrollControls = useAnimation();
 	const [showButton, setShowButton] = useState(false);
+	const partnersSection = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const section = document.getElementById("partners-section");
-			const sectionTop = section.offsetTop - window.innerHeight;
+		const handleScroll = async () => {
+			if (!partnersSection.current) return;
+			const sectionTop = partnersSection.current.offsetTop - window.innerHeight;
 
 			if (window.scrollY >= sectionTop) {
-				scrollControls.start({ opacity: 1, y: 0 });
+				await scrollControls.start({ opacity: 1, y: 0 });
 			} else {
-				scrollControls.start({ opacity: 0, y: 30 });
+				await scrollControls.start({ opacity: 0, y: 30 });
 			}
 
 			if (window.scrollY > 300) {
@@ -75,7 +53,6 @@ const Home = () => {
 			<Navbar />
 			<Hero />
 			<motion.section
-				id="partners-section"
 				initial={{ opacity: 0, y: 50 }}
 				animate={scrollControls}
 				transition={{
@@ -84,6 +61,7 @@ const Home = () => {
 					x: { duration: 1 },
 				}}
 				className="bg-gray-100 py-6 px-4 sm:px-8 md:px-12 lg:px-20 mb-5"
+				ref={partnersSection}
 			>
 				<div className="container md:p-5 md:pt-10 mx-auto text-center">
 					<h4 className="text-2xl uppercase tracking-wider md:tracking-widest font-bold mb-6 text-left text-gray-500">
@@ -139,7 +117,7 @@ const Home = () => {
 					</p>
 
 					<div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-20 ">
-						{events.map((event, index) => (
+						{eventsData1.map((event, index) => (
 							<div
 								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
@@ -185,6 +163,4 @@ const Home = () => {
 			)}
 		</div>
 	);
-};
-
-export default Home;
+}

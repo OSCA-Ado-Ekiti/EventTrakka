@@ -1,6 +1,6 @@
 import pic from "@assets/Rectangle 3.png";
 
-const AboutHero = () => {
+export default function AboutHero() {
 	return (
 		<>
 			<div className="mt-20 py-10 md:py-20 px-6 md:px-20 w-full bg-gray-50">
@@ -45,6 +45,4 @@ const AboutHero = () => {
 			</div>
 		</>
 	);
-};
-
-export default AboutHero;
+}

@@ -2,7 +2,7 @@ import FooterImage from "@assets/footer.svg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+export default function Footer() {
 	const [isMobile, setIsMobile] = useState(false);
 	const navigate = useNavigate();
 
@@ -157,6 +157,4 @@ const Footer = () => {
 			)}
 		</div>
 	);
-};
-
-export default Footer;
+}

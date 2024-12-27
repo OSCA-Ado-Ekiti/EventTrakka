@@ -6,7 +6,7 @@ import GalleryIcon from "@assets/gallery-icon.png";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const Carousel = () => {
+export default function Carousel() {
 	const images = [
 		{ image: GalleryOne },
 		{ image: GalleryTwo },
@@ -126,6 +126,4 @@ const Carousel = () => {
 			</div>
 		</div>
 	);
-};
-
-export default Carousel;
+}

@@ -1,7 +1,7 @@
 import HeroView from "@components/HeroView";
 import Navbar from "@components/Navbar";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import Organizer01 from "@assets/Organizer_1.png";
 import Organizer02 from "@assets/Organizer_2.png";
@@ -9,18 +9,19 @@ import Organizer02 from "@assets/Organizer_2.png";
 import Footer from "@components/Footer.tsx";
 import Newsletter from "@components/Newsletter.tsx";
 
-const View = () => {
+export default function EventDetail() {
 	const scrollControls = useAnimation();
+	const partnersSection = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const section = document.getElementById("partners-section");
-			const sectionTop = section.offsetTop - window.innerHeight;
+		const handleScroll = async () => {
+			if (!partnersSection.current) return;
+			const sectionTop = partnersSection.current.offsetTop - window.innerHeight;
 
 			if (window.scrollY >= sectionTop) {
-				scrollControls.start({ opacity: 1, y: 0 });
+				await scrollControls.start({ opacity: 1, y: 0 });
 			} else {
-				scrollControls.start({ opacity: 0, y: 30 });
+				await scrollControls.start({ opacity: 0, y: 30 });
 			}
 		};
 
@@ -33,7 +34,6 @@ const View = () => {
 			<Navbar />
 			<HeroView />
 			<motion.section
-				id="partners-section"
 				initial={{ opacity: 0, y: 50 }}
 				animate={scrollControls}
 				transition={{
@@ -45,6 +45,7 @@ const View = () => {
 					background: "#EDFCF4",
 				}}
 				className="py-8 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 "
+				ref={partnersSection}
 			>
 				<div className="container mx-auto text-left">
 					<div className="mb-6">
@@ -142,6 +143,4 @@ const View = () => {
 			<Footer />
 		</div>
 	);
-};
-
-export default View;
+}

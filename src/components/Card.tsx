@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ imageSrc, title, date, link }) => {
+type CardProps = {
+	readonly imageSrc: string;
+	readonly title: string;
+	readonly date: string;
+	readonly link: string;
+};
+
+export default function Card({ imageSrc, title, date, link }: CardProps) {
 	return (
 		<Link
 			to={link}
@@ -19,6 +26,4 @@ const Card = ({ imageSrc, title, date, link }) => {
 			</div>
 		</Link>
 	);
-};
-
-export default Card;
+}

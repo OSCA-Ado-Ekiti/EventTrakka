@@ -3,7 +3,7 @@ import Navbar from "@components/Navbar.tsx";
 import { RiLockPasswordLine, RiMailLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+export default function Login() {
 	return (
 		<>
 			<Navbar />
@@ -87,6 +87,4 @@ const Login = () => {
 			</div>
 		</>
 	);
-};
-
-export default Login;
+}

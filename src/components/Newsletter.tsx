@@ -1,4 +1,4 @@
-const NewsLetter = () => {
+export default function NewsLetter() {
 	return (
 		<div>
 			<div className="w-auto lg:mx-20 mx-4 p-4 bg-green-200 rounded-lg shadow-md mt-10 items-center justify-center">
@@ -16,6 +16,4 @@ const NewsLetter = () => {
 			</div>
 		</div>
 	);
-};
-
-export default NewsLetter;
+}

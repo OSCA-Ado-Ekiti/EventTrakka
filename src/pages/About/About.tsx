@@ -2,11 +2,12 @@ import AboutHero from "@components/AboutHero.tsx";
 import Footer from "@components/Footer.tsx";
 import Header from "@components/Navbar.tsx";
 import PreviousPost from "@pages/About/PreviousPost.tsx";
-import EventList from "@pages/About/UpcomingEvent.tsx";
+import UpcomingEvent from "@pages/About/UpcomingEvent.tsx";
 import { useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-const About = () => {
+
+export default function About() {
 	const scrollControls = useAnimation();
 	const [showButton, setShowButton] = useState(false);
 
@@ -30,11 +31,12 @@ const About = () => {
 		<div>
 			<Header />
 			<AboutHero />
-			<EventList />
+			<UpcomingEvent />
 			<PreviousPost />
 			<Footer />
 			{showButton && (
 				<button
+					type="button"
 					onClick={scrollToTop}
 					className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
 				>
@@ -43,6 +45,4 @@ const About = () => {
 			)}
 		</div>
 	);
-};
-
-export default About;
+}

@@ -1,7 +1,7 @@
 import organizer2 from "@assets/img6063.png";
 import organizer1 from "@assets/my-headshot.png";
 
-const Organizers = () => {
+export default function Organizers() {
 	return (
 		<div>
 			<h2 className="font-bold text-2xl md:text-2xl lg:text-3xl text-green-800 mb-8 ml-8">
@@ -78,6 +78,4 @@ const Organizers = () => {
 			</section>
 		</div>
 	);
-};
-
-export default Organizers;
+}

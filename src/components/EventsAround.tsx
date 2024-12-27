@@ -1,61 +1,9 @@
-import EventOne from "@assets/event-1.png";
-import EventTwo from "@assets/event-2.png";
-import EventThree from "@assets/event-3.png";
-import EventFour from "@assets/event-4.png";
-import EventFive from "@assets/event-5.png";
-import EventSix from "@assets/event-6.png";
+import { eventsData3 } from "@/dummyData.ts";
 import Location from "@assets/location.png";
 import { FaAngleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const eventData = [
-	{
-		image: EventOne,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "/view",
-	},
-	{
-		image: EventTwo,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "#",
-	},
-	{
-		image: EventThree,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "/view",
-	},
-	{
-		image: EventFour,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "/view",
-	},
-	{
-		image: EventFive,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "/view",
-	},
-	{
-		image: EventSix,
-		date: { month: "OCT", day: "20" },
-		title: "Backend Developers info session",
-		description: "Lorem ipsum dolor sit amet consectetur. Lectus egestas.",
-		link: "/view",
-	},
-
-	// Add more objects in the eventData array as needed
-];
-
-const EventsAround = () => {
+export default function EventsAround() {
 	const navigate = useNavigate();
 	return (
 		<section className="w-full h-auto md:px-20 px-5 pt-12 pb-14 bg-white flex flex-col mt-28">
@@ -91,7 +39,7 @@ const EventsAround = () => {
 			</div>
 			{/* Second section */}
 			<div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-12">
-				{eventData.map((event, index) => (
+				{eventsData3.map((event, index) => (
 					<div
 						key={index}
 						className="flex flex-col justify-start items-start mt-12"
@@ -134,6 +82,4 @@ const EventsAround = () => {
 			</div>
 		</section>
 	);
-};
-
-export default EventsAround;
+}

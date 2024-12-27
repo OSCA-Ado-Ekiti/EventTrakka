@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-const AboutUs = () => {
+export default function AboutUs() {
 	const controls = useAnimation();
 	const [ref, inView] = useInView();
 
@@ -73,6 +73,4 @@ const AboutUs = () => {
 			</div>
 		</motion.div>
 	);
-};
-
-export default AboutUs;
+}

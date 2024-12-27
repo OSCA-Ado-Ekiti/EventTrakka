@@ -1,7 +1,7 @@
 import Navbar from "@components/Navbar.tsx";
 import { Link } from "react-router-dom";
 
-const SignUpPage = () => {
+export default function Register() {
 	return (
 		<>
 			<Navbar />
@@ -91,6 +91,4 @@ const SignUpPage = () => {
 			</div>
 		</>
 	);
-};
-
-export default SignUpPage;
+}

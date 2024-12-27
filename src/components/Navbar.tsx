@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaAngleDown, FaBars } from "react-icons/fa";
-import { Link, NavLink, useNavigate } from "react-router-dom"; // Import Link from React Router
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"; // Import Link from React Router
 
-const Navbar = () => {
+export default function Navbar() {
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const [isCommunityDropdownOpen, setIsCommunityDropdownOpen] = useState(false);
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const toggleCommunityDropdown = () => {
 		setIsCommunityDropdownOpen(!isCommunityDropdownOpen);
@@ -16,17 +17,18 @@ const Navbar = () => {
 		setMenuOpen(!isMenuOpen);
 	};
 
-	const style = ({ isActive }) => (isActive ? "text-green-700" : "");
+	const setActiveLinkStyle = (to: string) =>
+		location.pathname === to ? "text-green-700" : "";
 
 	useEffect(() => {
-		const closeMenuOnBodyClick = (event) => {
-			const clickedElement = event.target;
+		const closeMenuOnBodyClick = (event: MouseEvent) => {
+			const clickedElement = event.target as HTMLDivElement | null;
 			const isMobile = window.innerWidth <= 768;
 
 			if (
 				isMenuOpen &&
 				isMobile &&
-				!clickedElement.closest("nav") // Check if the clicked element is outside the nav
+				!clickedElement?.closest("nav") // Check if the clicked element is outside the nav
 			) {
 				setMenuOpen(false);
 			}
@@ -75,7 +77,7 @@ const Navbar = () => {
 						<li>
 							<NavLink
 								to="/"
-								className={` py-2  block px-1 text-black md:hover:text-green-700 ${style}`}
+								className={` py-2  block px-1 text-black md:hover:text-green-700 ${setActiveLinkStyle("/")}`}
 								aria-current="page"
 							>
 								Home
@@ -85,7 +87,7 @@ const Navbar = () => {
 						<li>
 							<NavLink
 								to="/events"
-								className={` py-2  block px-1 text-black md:hover:text-green-700 ${style}`}
+								className={` py-2  block px-1 text-black md:hover:text-green-700 ${setActiveLinkStyle("/events")}`}
 								aria-current="page"
 							>
 								Events
@@ -140,7 +142,7 @@ const Navbar = () => {
 						<li>
 							<NavLink
 								to="/about"
-								className="block py-2 px-1 text-black md:hover:text-green-700 rounded "
+								className={`block py-2 px-1 text-black md:hover:text-green-700 rounded ${setActiveLinkStyle("/about")}`}
 								aria-current="page"
 							>
 								About
@@ -165,6 +167,4 @@ const Navbar = () => {
 			</nav>
 		</motion.header>
 	);
-};
-
-export default Navbar;
+}

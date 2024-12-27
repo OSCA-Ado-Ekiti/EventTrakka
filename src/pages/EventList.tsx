@@ -6,7 +6,7 @@ import TrendingEvents from "@components/TrendingEvents.tsx";
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-const Event = () => {
+export default function EventList() {
 	const [showButton, setShowButton] = useState(false);
 
 	useEffect(() => {
@@ -46,6 +46,4 @@ const Event = () => {
 			)}
 		</div>
 	);
-};
-
-export default Event;
+}

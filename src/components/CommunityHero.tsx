@@ -1,6 +1,6 @@
 import gdglogo from "@assets/gdglogo.svg";
 
-const CommunityHero = () => {
+export default function CommunityHero() {
 	return (
 		<div className="mt-[80px] bg-teal-300 p-14 flex flex-col gap-7 text-white">
 			<div className="flex gap-2 justify-center items-center text-xl">
@@ -18,6 +18,4 @@ const CommunityHero = () => {
 			</a>
 		</div>
 	);
-};
-
-export default CommunityHero;
+}

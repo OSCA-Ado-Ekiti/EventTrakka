@@ -1,7 +1,7 @@
 import hero from "@assets/hero-image.jpg";
 import { motion } from "framer-motion";
 
-const Hero = () => {
+export default function Hero() {
 	return (
 		<motion.div
 			initial={{ opacity: 0, x: -50 }}
@@ -50,6 +50,4 @@ const Hero = () => {
 			</div>
 		</motion.div>
 	);
-};
-
-export default Hero;
+}

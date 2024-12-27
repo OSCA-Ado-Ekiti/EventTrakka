@@ -1,7 +1,7 @@
 import heroview from "@assets/view-page-hero-section.png";
 import { motion } from "framer-motion";
 
-const HeroView = () => {
+export default function HeroView() {
 	return (
 		<motion.div
 			initial={{ opacity: 0, x: -50 }}
@@ -21,6 +21,4 @@ const HeroView = () => {
 			</motion.div>
 		</motion.div>
 	);
-};
-
-export default HeroView;
+}
