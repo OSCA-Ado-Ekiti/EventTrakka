@@ -9,8 +9,10 @@ import useScrollToTopButton from "@/utils/hooks/useScrollToTopButton.ts";
 import Footer from "@components/Footer.tsx";
 import Newsletter from "@components/Newsletter.tsx";
 import { FaArrowUp } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
 export default function EventDetail() {
+	const { eventId } = useParams<{ eventId: string }>();
 	const {
 		scrollAnimationControls,
 		targetEl,
@@ -39,7 +41,7 @@ export default function EventDetail() {
 				<div className="container mx-auto text-left">
 					<div className="mb-6">
 						<h4 className="text-3xl lg:text-4xl font-semibold leading-10 text-green-900">
-							Backend Developers Info Session
+							Backend Developers Info Session Day {eventId}
 						</h4>
 						<h4 className="text-xl lg:text-2xl text-hero-text">
 							Exploring Crucial Aspects Of Backend Technology

@@ -1,8 +1,8 @@
 import BackendService from "@/backendService.ts";
 import ProtectedRoute from "@components/ProtectedRoute.tsx";
 import About from "@pages/About/About.tsx";
-import Communities from "@pages/Communities.tsx";
-import Gdsceksu from "@pages/Communities/Gdsceksu.tsx";
+import CommunityDetail from "@pages/CommunityDetail.tsx";
+import CommunityList from "@pages/CommunityList.tsx";
 import Dashboard from "@pages/Dashboard.tsx";
 import EventDetail from "@pages/EventDetail.tsx";
 import EventList from "@pages/EventList.tsx";
@@ -33,11 +33,11 @@ export default function App() {
 					}
 				/>
 				<Route path="/about" element={<About />} />
-				<Route path="/view" element={<EventDetail />} />
 				<Route path="/events" element={<EventList />} />
+				<Route path="/events/:eventId" element={<EventDetail />} />
 				<Route path="/signup" element={<Register />} />
-				<Route path="/communities" element={<Communities />} />
-				<Route path="/communities/gdsceksu" element={<Gdsceksu />} />
+				<Route path="/communities" element={<CommunityList />} />
+				<Route path="/communities/:communityId" element={<CommunityDetail />} />
 			</Routes>
 		</div>
 	);

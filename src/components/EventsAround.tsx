@@ -1,7 +1,7 @@
 import { eventsData3 } from "@/dummyData.ts";
 import Location from "@assets/location.png";
 import { FaAngleRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function EventsAround() {
 	const navigate = useNavigate();
@@ -67,12 +67,12 @@ export default function EventsAround() {
 										<p className="w-full text-gray-500 text-base font-normal pr-10 mb-5 mt-5">
 											{event.description}
 										</p>
-										<p
-											onClick={() => navigate("/view")}
+										<Link
+											to={`/events/${index + 1}`}
 											className="text-green-800 flex text-base font-semibold underline mb-5 cursor-pointer"
 										>
 											View Details <FaAngleRight className="ml-1 mt-1" />
-										</p>
+										</Link>
 									</div>
 								</div>
 							</div>
