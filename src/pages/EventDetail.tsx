@@ -1,33 +1,22 @@
 import HeroView from "@components/HeroView";
 import Navbar from "@components/Navbar";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 import Organizer01 from "@assets/Organizer_1.png";
 import Organizer02 from "@assets/Organizer_2.png";
 
+import useScrollToTopButton from "@/utils/hooks/useScrollToTopButton.ts";
 import Footer from "@components/Footer.tsx";
 import Newsletter from "@components/Newsletter.tsx";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function EventDetail() {
-	const scrollControls = useAnimation();
-	const partnersSection = useRef<HTMLDivElement | null>(null);
-
-	useEffect(() => {
-		const handleScroll = async () => {
-			if (!partnersSection.current) return;
-			const sectionTop = partnersSection.current.offsetTop - window.innerHeight;
-
-			if (window.scrollY >= sectionTop) {
-				await scrollControls.start({ opacity: 1, y: 0 });
-			} else {
-				await scrollControls.start({ opacity: 0, y: 30 });
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [scrollControls]);
+	const {
+		scrollAnimationControls,
+		targetEl,
+		isScrollToTopButtonVisible,
+		handleScrollToTop,
+	} = useScrollToTopButton(300, true);
 
 	return (
 		<div className="bg-gray-50">
@@ -35,7 +24,7 @@ export default function EventDetail() {
 			<HeroView />
 			<motion.section
 				initial={{ opacity: 0, y: 50 }}
-				animate={scrollControls}
+				animate={scrollAnimationControls}
 				transition={{
 					ease: "linear",
 					duration: 0.5,
@@ -45,7 +34,7 @@ export default function EventDetail() {
 					background: "#EDFCF4",
 				}}
 				className="py-8 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 "
-				ref={partnersSection}
+				ref={targetEl}
 			>
 				<div className="container mx-auto text-left">
 					<div className="mb-6">
@@ -141,6 +130,16 @@ export default function EventDetail() {
 
 			<Newsletter />
 			<Footer />
+
+			{isScrollToTopButtonVisible && (
+				<button
+					type="button"
+					onClick={handleScrollToTop}
+					className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
+				>
+					<FaArrowUp />
+				</button>
+			)}
 		</div>
 	);
 }

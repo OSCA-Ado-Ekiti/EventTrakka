@@ -1,32 +1,15 @@
+import useScrollToTopButton from "@/utils/hooks/useScrollToTopButton.ts";
 import AboutHero from "@components/AboutHero.tsx";
 import Footer from "@components/Footer.tsx";
 import Header from "@components/Navbar.tsx";
 import PreviousPost from "@pages/About/PreviousPost.tsx";
 import UpcomingEvent from "@pages/About/UpcomingEvent.tsx";
-import { useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
 export default function About() {
-	const scrollControls = useAnimation();
-	const [showButton, setShowButton] = useState(false);
+	const { isScrollToTopButtonVisible, handleScrollToTop } =
+		useScrollToTopButton(100, false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 100) {
-				setShowButton(true);
-			} else {
-				setShowButton(false);
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
-
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	};
 	return (
 		<div>
 			<Header />
@@ -34,10 +17,10 @@ export default function About() {
 			<UpcomingEvent />
 			<PreviousPost />
 			<Footer />
-			{showButton && (
+			{isScrollToTopButtonVisible && (
 				<button
 					type="button"
-					onClick={scrollToTop}
+					onClick={handleScrollToTop}
 					className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
 				>
 					<FaArrowUp />

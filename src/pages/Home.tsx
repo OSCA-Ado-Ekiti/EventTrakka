@@ -1,4 +1,5 @@
 import { eventsData1 } from "@/dummyData.ts";
+import useScrollToTopButton from "@/utils/hooks/useScrollToTopButton.ts";
 import i4gLogoUrl from "@assets/14g-oye.png";
 import sheCodeAfricaLogoUrl from "@assets/She-code-africa.png";
 import witLogoUrl from "@assets/WIT.png";
@@ -12,41 +13,17 @@ import Footer from "@components/Footer.tsx";
 import Hero from "@components/Hero.tsx";
 import Navbar from "@components/Navbar.tsx";
 import NewsLetter from "@components/Newsletter.tsx";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { BiSolidCalendarStar } from "react-icons/bi";
 import { FaArrowUp } from "react-icons/fa";
 
 export default function Home() {
-	const scrollControls = useAnimation();
-	const [showButton, setShowButton] = useState(false);
-	const partnersSection = useRef<HTMLDivElement | null>(null);
-
-	useEffect(() => {
-		const handleScroll = async () => {
-			if (!partnersSection.current) return;
-			const sectionTop = partnersSection.current.offsetTop - window.innerHeight;
-
-			if (window.scrollY >= sectionTop) {
-				await scrollControls.start({ opacity: 1, y: 0 });
-			} else {
-				await scrollControls.start({ opacity: 0, y: 30 });
-			}
-
-			if (window.scrollY > 300) {
-				setShowButton(true);
-			} else {
-				setShowButton(false);
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [scrollControls]);
-
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	};
+	const {
+		scrollAnimationControls,
+		targetEl,
+		isScrollToTopButtonVisible,
+		handleScrollToTop,
+	} = useScrollToTopButton(300, true);
 
 	return (
 		<div>
@@ -54,14 +31,14 @@ export default function Home() {
 			<Hero />
 			<motion.section
 				initial={{ opacity: 0, y: 50 }}
-				animate={scrollControls}
+				animate={scrollAnimationControls}
 				transition={{
 					ease: "linear",
 					duration: 0.5,
 					x: { duration: 1 },
 				}}
 				className="bg-gray-100 py-6 px-4 sm:px-8 md:px-12 lg:px-20 mb-5"
-				ref={partnersSection}
+				ref={targetEl}
 			>
 				<div className="container md:p-5 md:pt-10 mx-auto text-center">
 					<h4 className="text-2xl uppercase tracking-wider md:tracking-widest font-bold mb-6 text-left text-gray-500">
@@ -69,7 +46,7 @@ export default function Home() {
 					</h4>
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
-						animate={scrollControls}
+						animate={scrollAnimationControls}
 						transition={{ duration: 0.8 }}
 						className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
 					>
@@ -85,7 +62,7 @@ export default function Home() {
 								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
 								initial={{ opacity: 0, y: 50 }}
-								animate={scrollControls}
+								animate={scrollAnimationControls}
 								transition={{ duration: 0.8, delay: index * 0.1 }}
 								className="partner-logo"
 								whileHover={{ scale: 1.1 }}
@@ -152,10 +129,10 @@ export default function Home() {
 			<NewsLetter />
 			<Footer />
 
-			{showButton && (
+			{isScrollToTopButtonVisible && (
 				<button
 					type="button"
-					onClick={scrollToTop}
+					onClick={handleScrollToTop}
 					className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
 				>
 					<FaArrowUp />
