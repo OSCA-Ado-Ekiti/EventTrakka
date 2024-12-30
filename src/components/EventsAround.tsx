@@ -1,10 +1,9 @@
 import { eventsData3 } from "@/dummyData.ts";
 import Location from "@assets/location.png";
 import { FaAngleRight } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function EventsAround() {
-	const navigate = useNavigate();
 	return (
 		<section className="w-full h-auto md:px-20 px-5 pt-12 pb-14 bg-white flex flex-col mt-28">
 			<div className="w-full  h-auto flex flex-col items-start gap-4">
