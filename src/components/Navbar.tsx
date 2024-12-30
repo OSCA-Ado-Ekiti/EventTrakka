@@ -94,14 +94,14 @@ export default function Navbar() {
 							</NavLink>
 						</li>
 						<li className="md:relative">
-							<div
+							<button
 								type="button"
 								onClick={toggleCommunityDropdown}
 								className="flex items-center  gap-1 justify-between w-full text-black py-2 px-1 rounded cursor-pointer md:hover:bg-transparent md:border-0 hover:text-green-700 md:w-auto"
 							>
 								<p>Communities</p>
 								<FaAngleDown className="inline-block group" />
-							</div>
+							</button>
 							<div
 								className={`${
 									isCommunityDropdownOpen ? "block" : "hidden"
