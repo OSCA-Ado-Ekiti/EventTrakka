@@ -45,36 +45,36 @@ export default function Home() {
 						PARTNERED BY
 					</h4>
 					<motion.div
-						initial={{ opacity: 0, y: 50 }}
-						animate={scrollAnimationControls}
-						transition={{ duration: 0.8 }}
-						className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
-					>
-						{[
-							googleOyeUrl,
-							googleAdoUrl,
-							witLogoUrl,
-							sheCodeAfricaLogoUrl,
-							microsoftLearnUrl,
-							i4gLogoUrl,
-						].map((logo, index) => (
-							<motion.div
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								key={index}
-								initial={{ opacity: 0, y: 50 }}
-								animate={scrollAnimationControls}
-								transition={{ duration: 0.8, delay: index * 0.1 }}
-								className="partner-logo"
-								whileHover={{ scale: 1.1 }}
-							>
-								<img
-									src={logo}
-									alt={`Partner ${index + 1}`}
-									className="w-32 h-32 object-contain grayscale"
-								/>
-							</motion.div>
-						))}
-					</motion.div>
+							initial={{ opacity: 0, y: 50 }}
+							animate={scrollAnimationControls}
+							transition={{ duration: 0.8 }}
+							className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center"
+						>
+							{[
+								googleOyeUrl,
+								googleAdoUrl,
+								witLogoUrl,
+								sheCodeAfricaLogoUrl,
+								microsoftLearnUrl,
+								i4gLogoUrl,
+							].map((logo, index) => (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0, y: 50 }}
+									animate={scrollAnimationControls}
+									transition={{ duration: 0.8, delay: index * 0.1 }}
+									className="partner-logo"
+									whileHover={{ scale: 1.1 }}
+								>
+									<img
+										src={logo}
+										alt={`Partner ${index + 1}`}
+										className="w-32 h-32 object-contain grayscale"
+									/>
+								</motion.div>
+							))}
+						</motion.div>
+
 				</div>
 			</motion.section>
 
