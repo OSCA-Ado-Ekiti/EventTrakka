@@ -46,7 +46,7 @@ export default function Navbar() {
 			initial={{ y: -100 }}
 			animate={{ y: 0 }}
 			transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
-			className="fixed -top-0 left-0 right-0 z-50 w-full"
+			className="sticky -top-0 left-0 right-0 z-50 w-full"
 		>
 			<nav className=" bg-white text-green-900 p-4 px-4 flex justify-between items-center md:gap-5 lg:gap-0 shadow-lg">
 				<div className="flex  items-center justify-between">
