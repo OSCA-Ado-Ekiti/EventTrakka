@@ -43,16 +43,16 @@ export default function Footer() {
 									Company
 								</h1>
 								<ul>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="/events">Events</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">Communities</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="/about">About Us</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">Our Blog</a>
 									</li>
 								</ul>
@@ -62,16 +62,16 @@ export default function Footer() {
 									Support
 								</h1>
 								<ul>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">Twitter</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">Github</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">LinkedIn</a>
 									</li>
-									<li className="text-white text-lg mb-1">
+									<li className="text-white hover:text-green-400 text-lg mb-1">
 										<a href="#">Email</a>
 									</li>
 									{/* Add more links */}
