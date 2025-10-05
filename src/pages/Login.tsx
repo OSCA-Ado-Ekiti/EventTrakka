@@ -1,9 +1,13 @@
 import loginIllustrationUrl from "@assets/logon.png";
-import Navbar from "@components/Navbar.tsx";
+import Navbar from "@components/Navbar";
 import { RiLockPasswordLine, RiMailLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		alert("login function is needed")
+	};
 	return (
 		<>
 			<Navbar />
@@ -21,13 +25,13 @@ export default function Login() {
 				<div className="bg-white w-full flex justify-center items-center md:w-1/2 flex-1">
 					<div className="flex flex-col gap-12">
 						<div>
-							<h1 className="text-gray-700 justify-center item-center text-3xl font-bold lg:mt-20 mt-8 mb-3">
+							<h1 className="text-gray-700 justify-center items-center text-3xl font-bold lg:mt-20 mt-8 mb-3">
 								Community Leads Login
 							</h1>
 							<h5>Welcome back! </h5>
 						</div>
 
-						<form className=" pt-6 pb-3 w-full">
+						<form className=" pt-6 pb-3 w-full" onSubmit={handleSubmit}>
 							<div className="mb-10 relative">
 								<span className="absolute inset-y-0 left-0 flex items-center pl-3">
 									<RiMailLine className="h-5 w-5  text-gray-500" />
@@ -63,17 +67,15 @@ export default function Login() {
 									Forgot Password?
 								</a>
 							</div>
+							<button
+								className="bg-green-500 hover:bg-green-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+								type="submit"
+							>
+								Log In
+							</button>
 						</form>
 
 						<div className="flex flex-col gap-4 w-full">
-							<div className="flex items-center justify-center">
-								<button
-									className="bg-green-500 hover:bg-green-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-									type="button"
-								>
-									Log In"
-								</button>
-							</div>
 							<div className="lg:text-md text-sm gap-1 text-gray-600 flex items-center mx-auto lg:mx-12 justify-center">
 								<p>Don’t have an account? </p>
 

@@ -80,7 +80,7 @@ export default function EventDetail() {
 					<div className="text-left">
 						<h4 className="text-xl lg:text-2xl text-black-600">
 							<span className="font-bold">Link to Register: </span>
-							<a href="https://bit.ly.334455" className=" hover:text-green-700">
+							<a href="https://bit.ly.334455" className=" hover:text-green-700" target="blank">
 								https://bit.ly.334455
 							</a>
 						</h4>

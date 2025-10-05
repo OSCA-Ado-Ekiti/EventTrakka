@@ -1,5 +1,6 @@
 import BackendService from "@/backendService.ts";
 import ProtectedRoute from "@components/ProtectedRoute.tsx";
+import ScrollToTop from "@/components/ScrollToTop";
 import About from "@pages/About/About.tsx";
 import CommunityDetail from "@pages/CommunityDetail.tsx";
 import CommunityList from "@pages/CommunityList.tsx";
@@ -21,6 +22,7 @@ export default function App() {
 
 	return (
 		<div className="font-pop">
+			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<Login />} />

@@ -69,7 +69,7 @@ export default function Home() {
 									<img
 										src={logo}
 										alt={`Partner ${index + 1}`}
-										className="w-32 h-32 object-contain grayscale"
+										className="w-32 h-32 object-contain grayscale hover:grayscale-0 transition-all duration-500"
 									/>
 								</motion.div>
 							))}

@@ -51,11 +51,11 @@ export default function EventsAround() {
 									alt={`Event ${index + 1}`}
 								/>
 								<div className="w-full lg:w-88 px-0.5 justify-between flex py-0.75 mt-4">
-									<div className="w-1/6 pl-4">
+									<div className="w-1/6 pl-4 text-center">
 										<h1 className="text-green-800 flex text-lg font-bold mb-2">
 											{event.date.month}
 										</h1>
-										<h1 className="text-black text-xl font-bold flex">
+										<h1 className="text-black text-xl font-bold">
 											{event.date.day}
 										</h1>
 									</div>
