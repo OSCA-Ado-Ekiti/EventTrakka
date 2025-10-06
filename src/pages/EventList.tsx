@@ -11,7 +11,7 @@ export default function EventList() {
 		useScrollToTopButton(100, false);
 
 	return (
-		<div className="min-h-screen mt-10 flex flex-col">
+		<div className="min-h-screen flex flex-col">
 			<Header />
 			<main className="flex-grow">
 				<RegisterEvents />
