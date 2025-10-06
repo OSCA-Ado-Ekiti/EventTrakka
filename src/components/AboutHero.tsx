@@ -3,7 +3,7 @@ import pic from "@assets/Rectangle 3.png";
 export default function AboutHero() {
 	return (
 		<>
-			<div className="mt-20 py-10 md:py-20 px-6 md:px-20 w-full bg-gray-50">
+			<div className="py-10 md:py-20 px-6 md:px-20 w-full bg-gray-50">
 				{/* Hero Section */}
 				<div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between">
 					<div className="w-full md:w-[70%]">

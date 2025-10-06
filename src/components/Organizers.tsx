@@ -4,7 +4,7 @@ import organizer1 from "@assets/my-headshot.png";
 export default function Organizers() {
 	return (
 		<div>
-			<h2 className="font-bold text-2xl md:text-2xl lg:text-3xl text-green-800 mb-8 ml-8">
+			<h2 className="font-bold text-2xl md:text-2xl lg:text-3xl text-green-800 mb-8 mx-8">
 				Organizers
 			</h2>
 			<section className="py-10 px-4 sm:px-8 md:px-12 lg:px-20 bg-white">

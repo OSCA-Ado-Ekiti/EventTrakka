@@ -35,55 +35,55 @@ export default function EventDetail() {
 				style={{
 					background: "#EDFCF4",
 				}}
-				className="py-8 mt-20 px-4 sm:px-8 md:px-12 lg:px-20 "
+				className="py-8 px-4 sm:px-8 md:px-12 lg:px-20 "
 				ref={targetEl}
 			>
 				<div className="container mx-auto text-left">
 					<div className="mb-6">
-						<h4 className="text-3xl lg:text-4xl font-semibold leading-10 text-green-900">
+						<h2 className="text-2xl lg:text-3xl font-semibold leading-10 text-green-900">
 							Backend Developers Info Session Day {eventId}
-						</h4>
-						<h4 className="text-xl lg:text-2xl text-hero-text">
+						</h2>
+						<h3 className="text-xl lg:text-2xl text-hero-text">
 							Exploring Crucial Aspects Of Backend Technology
-						</h4>
+						</h3>
 					</div>
 
 					<div className="flex flex-col  gap-4 md:gap-0 md:flex-row justify-left items-center mb-6">
-						<h4 className="text-xl self-start md:self-center text-green-600 mr-4">
+						<p className="self-start md:self-center text-green-600 mr-4">
 							Date:{" "}
 							<span className="text-green-900 font-bold">Oct 12, 2023</span>
-						</h4>
-						<div className="flex self-start md:self-center gap-2 space-x-2">
-							<button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+						</p>
+						<div className="flex gap-2">
+							<button className="bg-green-900 hover:bg-green-700 text-white py-2 px-4 rounded-xl">
 								Virtual
 							</button>
-							<button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+							<button className="bg-green-900 hover:bg-green-700 text-white py-2 px-4 rounded-xl">
 								Backend
 							</button>
-							<button className="bg-green-900 hover:bg-green-700 text-white font-normal py-2 px-4 rounded-xl">
+							<button className="bg-green-900 hover:bg-green-700 text-white py-2 px-4 rounded-xl">
 								GDSC Fuoye
 							</button>
 						</div>
 					</div>
 
 					<div className="text-left mb-6">
-						<h4 className="text-xl lg:text-2xl text-black-600">
+						<p>
 							Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
 							vulputate libero et velit interdum, ac aliquet odio mattis. Class
 							aptent taciti sociosqu ad litora torquent per conubia nostra, per
 							inceptos himenaeos. Curabitur tempus urna at turpis condimentum
 							lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis
 							condimentum ac, vestibulum eu nisl.
-						</h4>
+						</p>
 					</div>
 
 					<div className="text-left">
-						<h4 className="text-xl lg:text-2xl text-black-600">
+						<p className="text-lg lg:text-xl text-black-600">
 							<span className="font-bold">Link to Register: </span>
-							<a href="https://bit.ly.334455" className=" hover:text-green-700" target="blank">
+							<a href="https://bit.ly.334455" className=" hover:text-green-700 hover:underline" target="blank">
 								https://bit.ly.334455
 							</a>
-						</h4>
+						</p>
 					</div>
 				</div>
 			</motion.section>

@@ -2,7 +2,7 @@ import GalleryOne from "@assets/gallery-1.png";
 import GalleryTwo from "@assets/gallery-2.png";
 import GalleryThree from "@assets/gallery-3.png";
 import GalleryFour from "@assets/gallery-4.png";
-import Contact from "@pages/About/Contact.tsx";
+import Contact from "@/components/AboutContact";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
