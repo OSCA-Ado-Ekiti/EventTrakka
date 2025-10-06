@@ -7,9 +7,9 @@ export default function Register() {
 			<Navbar />
 			<div className="mt-28">
 				<div className="flex lg:mx-10">
-					<div className="lg:flex hidden relative justify-center items-center bg-green-900 text-white p-10 rounded-[69px] w-5/12">
-						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 top-[53px] right-8"></div>
-						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 top-20 -right-5"></div>
+					<div className="lg:flex hidden relative justify-center items-center bg-green-950 text-white p-10 rounded-[69px] w-5/12">
+						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 top-4 -right-10"></div>
+						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 top-10 -right-20"></div>
 						<div>
 							<h1 className="text-3xl font-bold leading-tight">
 								Welcome to EventTrakka, your ultimate event management solution.
@@ -20,8 +20,8 @@ export default function Register() {
 							</p>
 						</div>
 
-						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 -bottom-[-56px] left-8"></div>
-						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 bottom-20 -left-4"></div>
+						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 bottom-4 -left-10"></div>
+						<div className="absolute bg-[#EDFCF433] h-10 w-48 rounded-full transform -rotate-45 bottom-10 -left-20"></div>
 					</div>
 					<div className="flex flex-col justify-center p-10 lg:w-7/12 w-full bg-white">
 						<h2 className="lg:text-2xl text-lg font-bold text-green-800 mb-6">
@@ -68,10 +68,10 @@ export default function Register() {
 							/>
 
 							<p className="text-sm text-gray-600">
-								By proceeding, I agree to EventTrakka's
-								<span className="text-green-800">Terms of Use</span> and
+								By proceeding, I agree to EventTrakka's{" "}
+								<Link to="#" className="text-green-800 font-semibold">Terms of Use</Link> and
 								acknowledge that I have read the{" "}
-								<span className="text-green-800">Privacy Policy</span>.
+								<Link to="#" className="text-green-800 font-semibold">Privacy Policy</Link>.
 							</p>
 							<div></div>
 							<button className="w-full bg-green-700 text-white py-3 rounded">
@@ -81,7 +81,7 @@ export default function Register() {
 						<p className="mt-4 text-center text-sm">
 							Already have an account?
 							{""}
-							<Link to="/login" className="text-green-800">
+							<Link to="/login" className="text-green-800 font-semibold">
 								{" "}
 								Sign in
 							</Link>

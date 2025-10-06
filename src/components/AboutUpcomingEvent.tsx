@@ -9,11 +9,7 @@ export default function UpcomingEvent() {
 					{groups.map((group, index) => (
 						<button
 							key={index}
-							className={`px-4 py-2 w-full h-[60px] rounded-[20px] border border-gray-300 ${
-								group === "GDSC FUOYE"
-									? "bg-custom-green hover:text-black text-white"
-									: "text-gray-700"
-							} hover:bg-green-100 text-sm sm:text-base`}
+							className={`px-4 py-2 w-full h-[60px] rounded-[20px] border border-green-700 text-gray-700 hover:bg-green-700 hover:text-white text-sm sm:text-base`}
 						>
 							{group}
 						</button>

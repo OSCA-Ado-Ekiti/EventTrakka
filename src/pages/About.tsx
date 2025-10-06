@@ -2,8 +2,8 @@ import useScrollToTopButton from "@/utils/hooks/useScrollToTopButton.ts";
 import AboutHero from "@components/AboutHero.tsx";
 import Footer from "@components/Footer.tsx";
 import Header from "@components/Navbar.tsx";
-import PreviousPost from "@pages/About/PreviousPost.tsx";
-import UpcomingEvent from "@pages/About/UpcomingEvent.tsx";
+import PreviousPost from "@/components/AboutPastEvents";
+import UpcomingEvent from "@/components/AboutUpcomingEvent";
 import { FaArrowUp } from "react-icons/fa";
 
 export default function About() {

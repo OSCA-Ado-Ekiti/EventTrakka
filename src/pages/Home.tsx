@@ -70,6 +70,7 @@ export default function Home() {
 										src={logo}
 										alt={`Partner ${index + 1}`}
 										className="w-32 h-32 object-contain grayscale hover:grayscale-0 transition-all duration-500"
+										title={logo}
 									/>
 								</motion.div>
 							))}
@@ -80,7 +81,7 @@ export default function Home() {
 
 			<AboutUs />
 
-			<section className=" flex flex-col md:flex-row justify-between items-center px-5 md:px-20 mt-28 md:mt-10 gap-7 mb-5">
+			<section className="flex flex-col md:flex-row justify-between items-center px-5 md:px-20 mt-28 md:mt-10 gap-7 mb-5">
 				<div>
 					<h1 className="mb-3 font-bold text-3xl lg:text-4xl text-hero-text">
 						Your Ultimate Event Management Solution
